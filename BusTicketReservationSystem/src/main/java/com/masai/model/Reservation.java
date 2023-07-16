@@ -13,15 +13,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.Future;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
 //import com.masai.exception.CustomDateDeserializer;
 
 @Entity
-@Data
-@NoArgsConstructor
-@ToString
 public class Reservation {
 
 	@Id
@@ -69,6 +63,99 @@ public class Reservation {
 		this.reservationTime = reservationTime;
 		this.source = source;
 		this.destination = destination;
+	}
+
+
+	public Reservation() {
+		
+	}
+
+
+	public Integer getReservationId() {
+		return reservationId;
+	}
+
+
+	public void setReservationId(Integer reservationId) {
+		this.reservationId = reservationId;
+	}
+
+
+	public String getReservationStatus() {
+		return reservationStatus;
+	}
+
+
+	public void setReservationStatus(String reservationStatus) {
+		this.reservationStatus = reservationStatus;
+	}
+
+
+	public String getReservationType() {
+		return reservationType;
+	}
+
+
+	public void setReservationType(String reservationType) {
+		this.reservationType = reservationType;
+	}
+
+
+	public LocalDate getReservationDate() {
+		return reservationDate;
+	}
+
+
+	public void setReservationDate(LocalDate reservationDate) {
+		this.reservationDate = reservationDate;
+	}
+
+
+	public LocalTime getReservationTime() {
+		return reservationTime;
+	}
+
+
+	public void setReservationTime(String reservationTime) {
+		this.reservationTime = LocalTime.parse(reservationTime);
+	}
+
+
+	public String getSource() {
+		return source;
+	}
+
+
+	public void setSource(String source) {
+		this.source = source;
+	}
+
+
+	public String getDestination() {
+		return destination;
+	}
+
+
+	public void setDestination(String destination) {
+		this.destination = destination;
+	}
+
+
+	public Bus getBus() {
+		return bus;
+	}
+
+
+	public void setBus(Bus bus) {
+		this.bus = bus;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Reservation [reservationId=" + reservationId + ", reservationStatus=" + reservationStatus
+				+ ", reservationType=" + reservationType + ", reservationDate=" + reservationDate + ", reservationTime="
+				+ reservationTime + ", source=" + source + ", destination=" + destination + "]";
 	}
 
 }
