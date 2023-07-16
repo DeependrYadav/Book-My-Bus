@@ -26,7 +26,6 @@ public class GlobalExceptionHandler {
 		
 	}
 
-
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	public ResponseEntity<MyErrorDetails> myMNVEHandler(MethodArgumentNotValidException me) {
 		
@@ -49,6 +48,18 @@ public class GlobalExceptionHandler {
 		return new ResponseEntity<MyErrorDetails>(err,HttpStatus.BAD_REQUEST);
 	}
 
+	@ExceptionHandler(BusException.class)
+	public ResponseEntity<MyErrorDetails> myBusException(BusException be, WebRequest webReq){
+		
+		MyErrorDetails red = new MyErrorDetails();
+		red.setTimestamp(LocalDateTime.now());
+		red.setMessage(be.getMessage());
+		red.setDetails(webReq.getDescription(false));
+		
+		return new ResponseEntity<MyErrorDetails>(red, HttpStatus.BAD_REQUEST);
+	}
+	
+	
 	@ExceptionHandler(UserException.class)
 	public ResponseEntity<MyErrorDetails> userExceptionHandler(UserException ue,WebRequest req){
 		
@@ -57,5 +68,29 @@ public class GlobalExceptionHandler {
 		err.setMessage(ue.getMessage());
 		err.setDetails(req.getDescription(false));
 		return new ResponseEntity<MyErrorDetails>(err,HttpStatus.BAD_REQUEST);
+	}
+	
+	@ExceptionHandler(DateTimeException.class)
+	public ResponseEntity<MyErrorDetails> DateTimeExceptionHandler(DateTimeException se, WebRequest req){
+	
+		MyErrorDetails err= new MyErrorDetails();
+			err.setTimestamp(LocalDateTime.now());
+			err.setMessage(se.getMessage());
+			err.setDetails(req.getDescription(false));
+				
+		return new ResponseEntity<MyErrorDetails>(err, HttpStatus.BAD_REQUEST);
+		
+	}
+	
+	@ExceptionHandler(FeedbackException.class)
+	public ResponseEntity<MyErrorDetails> myRouteException(FeedbackException re, WebRequest webReq){
+		
+		MyErrorDetails red = new MyErrorDetails();
+		red.setTimestamp(LocalDateTime.now());
+		red.setMessage(re.getMessage());
+		red.setDetails(webReq.getDescription(false));
+		
+		return new ResponseEntity<MyErrorDetails>(red, HttpStatus.BAD_REQUEST);
+		
 	}
 }
