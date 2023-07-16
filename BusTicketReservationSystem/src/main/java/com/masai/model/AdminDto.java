@@ -1,6 +1,5 @@
 package com.masai.model;
 
-
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
