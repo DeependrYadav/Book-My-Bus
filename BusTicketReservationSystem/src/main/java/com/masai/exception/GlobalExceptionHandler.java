@@ -42,6 +42,8 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(LoginException.class)
 	public ResponseEntity<MyErrorDetails> loginExceptionHandler(LoginException le,WebRequest req){
 		
+		le.printStackTrace();
+		
 		MyErrorDetails err=new MyErrorDetails();
 		err.setTimestamp(LocalDateTime.now());
 		err.setMessage(le.getMessage());
@@ -64,7 +66,7 @@ public class GlobalExceptionHandler {
 
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	public ResponseEntity<MyErrorDetails> myMNVEHandler(MethodArgumentNotValidException me) {
-		
+		me.printStackTrace();
 		MyErrorDetails err= new MyErrorDetails();
 		err.setTimestamp(LocalDateTime.now());
 		err.setMessage("Validation Error");
