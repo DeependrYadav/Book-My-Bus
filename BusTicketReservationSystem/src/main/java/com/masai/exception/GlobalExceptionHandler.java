@@ -10,10 +10,13 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.servlet.NoHandlerFoundException;
 
 import jakarta.el.MethodNotFoundException;
+import lombok.extern.slf4j.Slf4j;
 
 @ControllerAdvice
+@Slf4j
 public class GlobalExceptionHandler {
 
 	@ExceptionHandler(RouteException.class)
@@ -23,7 +26,7 @@ public class GlobalExceptionHandler {
 		red.setTimestamp(LocalDateTime.now());
 		red.setMessage(re.getMessage());
 		red.setDetails(webReq.getDescription(false));
-		
+		log.error("RouteException Occour!");
 		return new ResponseEntity<MyErrorDetails>(red, HttpStatus.BAD_REQUEST);
 		
 	}
@@ -66,14 +69,13 @@ public class GlobalExceptionHandler {
 
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	public ResponseEntity<MyErrorDetails> myMNVEHandler(MethodArgumentNotValidException me) {
-		me.printStackTrace();
+//		me.printStackTrace();
 		MyErrorDetails err= new MyErrorDetails();
 		err.setTimestamp(LocalDateTime.now());
 		err.setMessage("Validation Error");
 		err.setDetails(me.getBindingResult().getFieldError().getDefaultMessage());
 		
 		return new ResponseEntity<MyErrorDetails>(err,HttpStatus.BAD_REQUEST);
-		
 	}
 
 	@ExceptionHandler(FeedbackException.class)
@@ -136,6 +138,17 @@ public class GlobalExceptionHandler {
 	
 	@ExceptionHandler(DateTimeException.class)
 	public ResponseEntity<MyErrorDetails> DateTimeExceptionHandler(DateTimeException se, WebRequest req){
+	
+		MyErrorDetails err= new MyErrorDetails();
+			err.setTimestamp(LocalDateTime.now());
+			err.setMessage(se.getMessage());
+			err.setDetails(req.getDescription(false));
+				
+		return new ResponseEntity<MyErrorDetails>(err, HttpStatus.BAD_REQUEST);
+		
+	}
+	@ExceptionHandler(NoHandlerFoundException.class)
+	public ResponseEntity<MyErrorDetails> NoHandlerFoundExceptionHandler(NoHandlerFoundException se, WebRequest req){
 	
 		MyErrorDetails err= new MyErrorDetails();
 			err.setTimestamp(LocalDateTime.now());
