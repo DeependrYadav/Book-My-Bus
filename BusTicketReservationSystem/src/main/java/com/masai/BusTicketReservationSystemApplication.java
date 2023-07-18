@@ -13,14 +13,4 @@ public class BusTicketReservationSystemApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BusTicketReservationSystemApplication.class, args);
 	}
-	
-//	@Bean
-//	public LocalValidatorFactoryBean validator(MessageSource ms) {
-//		LocalValidatorFactoryBean l = new LocalValidatorFactoryBean();
-//		
-//		l.setValidationMessageSource(ms);
-//		
-//		return l;
-//	}
-
 }
