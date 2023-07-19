@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- Include custom CSS -->
+  <link rel="stylesheet" href="./styles/styles.css">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-3 sidebar">
+        <div class="logo">
+          <img src="https://bookmybus.co.in/themes/default/admin/assets/upload/logos/logo1-removebg-new.png" alt="Website Logo">
+        </div>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./Admin_User_Deatils.html">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Buses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Add New Buses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Routes</a>
+          </li>
+          <li class="nav-item">
+            <a id="logout" class="nav-link">Logout</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Content -->
+      <div class="col-md-9 content">
+        <h1>Dashboard</h1>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Resveration</h5>
+                <p class="card-text" id="card-1"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">FeedBack</h5>
+                <p class="card-text" id="card-2"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="month_Chart">
+            <h2 class="heading">Monthly  Chart</h2>
+        
+            <div id="myChart"></div>
+        </div>
+      </div>
+      
+    </div>
+
+  </div>
+  
+  <!-- Include Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <script src="./scripts/Admin_Home.js"></script>
+</body>
+</html>
