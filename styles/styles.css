@@ -6,6 +6,7 @@ body {
   
   .navbar {
     background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, #0E9E4D 0px 2px 6px -2px;
     max-height: 70px;
     display: flex;
     justify-content: space-between;
@@ -106,7 +107,7 @@ body {
     width: 84%;
     padding: 10px 8%;
     background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, #0E9E4D 0px 2px 6px -2px;
     z-index: 100;
   }
   
@@ -124,11 +125,10 @@ body {
         width: 100%;
         height: 100%;
         background-color: #0E9E4D;
-        padding: 20px;
         transition: right 0.3s;
         z-index: 1;
         margin-top: 75px;
-        width: 35%;
+        width: 40%;
         height: 500px;
         transition: 0.8s;
       }
@@ -141,8 +141,30 @@ body {
 
     .menu ul{
         display: block;
+        padding-left: 0;
     }
-  
+
+    .menu ul > li{
+        margin: 0 0;
+    }
+   
+    .menu > ul > li > a {
+        color: white;   
+        display: block;
+        padding: 10px;
+    }
+
+    .menu > ul > li > a:hover{
+        color: black;
+        background-color: white;
+    }
+    .dropdown-content a{
+        margin-left: 0;
+    }
+    .dropdown-content > li > a:hover{
+        background-color: white;
+        color: #0E9E4D;
+      }
     .hamburger {
       display: block;
     }
