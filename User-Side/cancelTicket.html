@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" href="https://bookmybus.co.in/themes/default/front/assets//templates/basic/css/bootstrap.min.css"> -->
-  <!-- Custom Link -->
-  <!-- <link rel="stylesheet" href="https://bookmybus.co.in/themes/default/front/assets//templates/basic/css/main.css">  -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">      -->
+  <!-- Css from FontAwesome for Amenities -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Website External Css Link -->
   <link rel="stylesheet" href="./styles/styles.css">
+  <link rel="stylesheet" href="./styles/ticketStatus.css">
+  <link rel="stylesheet" href="./styles/index.css">
   <title>Home -Book My Bus</title>
 </head>
 <body>
+    <!-- Navbar Starts -->
   <div class="navbar">
     <div class="logo">
       <img src="./images/Book_My_Bus_Logo.png" alt="Logo">
@@ -22,15 +23,15 @@
         <li class="dropdown">
           <a href="#">Services</a>
           <ul class="dropdown-content dropdown-toggle">
-            <li><a href="#">Book a Ticket</a></li>
-            <li><a href="#">Find Bus</a></li>
-            <li><a href="#">Ticket Status</a></li>
-            <li><a href="#">Cancel Ticket</a></li>
+            <li><a href="./bookTicket.html">Book a Ticket</a></li>
+            <li><a href="./bookTicket.html">Find Bus</a></li>
+            <li><a href="./ticketStatus.html">Ticket Status</a></li>
+            <li><a href="./cancelTicket.html">Cancel Ticket</a></li>
           </ul>
         </li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Account</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+        <li><a href="./login.html">Account</a></li>
       </ul>
     </div>
     <div class="hamburger" id="hamburger">
@@ -39,58 +40,33 @@
       <span></span>
     </div>
   </div>
-  <div class="home-container">
-    <div class="home-tagline-and-button">
-      <h1>Get Your Ticket Online,<br>Easy And Safely</h1>
-      <button>Book Now &nbsp; &rarr;</button>
-    </div>
-    <div class="moving-bus" id="moving-bus"></div>
-  </div>
-  <div class="home-booking-criteria">
-    <div class="hbc-heading">
-      <h1>Get Your Tickets With Just 3 Steps</h1>
-      <p>We’ve partnered with the India’s most popular bus companies. Have a look at our popular reason. Why should choose you Book My Bus. Just a Bus and get a ticket for your great journey. !</p>
-    </div>
-    <div class="hbc-containers">
-      <div>
-        <img src="./images/hbc-1.png" alt="">
-        <h2>Search Your Bus</h2>
-        <p>Choose your Pickup, Destination, journey dates and search for lowest price bus Ticket around the India to make your travel budget friendly.</p>
-      </div>
-      <div>
-        <img src="./images/hbc-2.png" alt="">
-        <h2>Choose The Ticket</h2>
-        <p>BMB's smart filters, its range of bus schedule and fleet and amenities to make your comfortable travel journey.</p>
-      </div>
-      <div>
-        <img src="./images/hbc-3.png" alt="">
-        <h2>Easy Pay</h2>
-        <p>BMB ensures smooth payment experience for the users by making all wallet payment secure and quicker. Save money on your tickets.</p>
-      </div>
+  <!-- Navbar Ends -->
+
+  <!-- Ticket Status -->
+  <div class="cancel-ticket-container">
+    <div class="ticket-search-container">
+        <div class="search-ticket">
+            <input type="text" id="search-ticket-id" placeholder="Please Enter Your Ticket Id Here...">
+        </div>
+        <div class="search-button">
+            <button id="search-ticket-button">Cancel Ticket</button>
+        </div>
     </div>
   </div>
-  <div class="home-booking-criteria">
-    <div class="hbc-heading">
-      <h1>Our Amenities</h1>
-      <p>BMB's buses intend to provide a comfortable and safe travel experience and therefore the buses are well-equipped with all necessary and basic amenities to boost customer satisfaction. Passengers will have access to all required amenities on the bus.</p>
-    </div>
-    <div class="slider-container">
-      <div class="slider">
-      </div>
-    </div>
-    </div>
-  </div>
+  
 
 
 
-  <!-- Footer -->
-  <!-- <div class="footer-top">
+
+
+  <!-- footer -->
+  <div class="footer-top">
     <div class="container">
         <div class="row footer-wrapper gy-sm-5 gy-4">
             <div class="col-xl-4 col-lg-3 col-md-6 col-sm-6">
                 <div class="footer-widget">
-                    <div class="logo">
-                        <img src="https://bookmybus.co.in/themes/default/admin/assets/upload/logos/logo1-removebg-new.png" alt="Logo">
+                    <div class="footer-logo">
+                        <img class="aei" src="https://bookmybus.co.in/themes/default/admin/assets/upload/logos/logo1-removebg-new.png" alt="Logo">
                     </div>
                     <p>We make it possible for you to buy tickets with its large network of trustworthy bus partners ! <br>As humans, we have the urge to explore By travelling you can be closer to the people you love.!</p>
                     <ul class="social-icons">
@@ -140,12 +116,14 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
+<!-- End of Foote  -->
 
 
 
   <!-- Java Script -->
+  <script src="./scripts/cancelTicket.js"></script>
   <script src="./scripts/index.js"></script>
 </body>
 </html>

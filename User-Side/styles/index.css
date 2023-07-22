@@ -1,0 +1,129 @@
+.footer-logo>img{
+    width: 45%;
+  }
+  .footer-widget>ul>li>a:hover {
+    color: #0E9E4D;
+  }
+  li{
+    list-style: none;
+  }
+  .footer-widget>ul>li>a{
+    text-decoration: none;
+    border: none;
+    outline: none;
+    color: white;
+  }
+  .footer-widget>h4{
+    text-decoration: underline;
+    width:50%;
+  
+    position: relative;
+    margin-left: 17%;
+  }
+  .footer-widget>h4::after {
+    content: "";
+    position: absolute;
+    bottom: -2px; 
+    left: 0;
+    width: 40%;
+    height: 1px;
+    background-color: #0E9E4D; 
+  }
+  
+  .col-md-4 {
+  
+    width: 20%;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .col-xl-4{
+    width: 30%;
+    margin-right: 15%;
+  }
+  
+  .footer-wrapper{
+    display: flex;
+  
+    color: white;
+  }
+  .social-icons>li{
+    margin-left: 20px;
+    
+  }
+  
+  .social-icons{
+    display: flex;
+  }
+  
+  .widget-title{
+    width: 10%;
+  }
+  .widget-title{
+    color: #0E9E4D;
+  }
+  .footer-top{
+   padding-top: 3%;
+    padding-left: 3%;
+    padding-right: 3%;
+    background-color:rgba(27, 39, 61, 0.99);
+  }
+  @media screen and (min-width: 480px ) and (max-width: 999px ) {
+    .gy-4{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .col-md-4 {
+  
+      width: 60%;
+      margin-left: 0;
+      padding-left: 0;
+    }
+    .col-xl-4{
+      width: 80%;
+      margin-right: 15%;
+    }
+    .footer-widget>h4{
+      text-decoration: underline;
+      width:100%;
+    
+      position: relative;
+      margin-left: 17%;
+    }
+    .footer-logo>img{
+      width: 59%;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .footer-wrapper {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .col-xl-4, .col-lg-3, .col-md-4, .col-sm-6 {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .footer-logo> img {
+      width: 100%;
+    }
+  
+    .footer-widget > h4 {
+      margin-left: 0;
+      text-align: center;
+    }
+  
+    .footer-widget > h4::after {
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20%;
+    }
+  
+    .social-icons {
+      justify-content: center;
+    }
+  
+    .widget-title {
+      width: 100%;
+    }
+  }

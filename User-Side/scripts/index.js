@@ -1,7 +1,7 @@
 const hamburger = document.getElementById('hamburger');
 const menu = document.getElementById('menu');
 const navbar = document.querySelector('.navbar');
-const moving_bus = document.getElementById('moving-bus');
+const moving_bus = document.querySelector('#moving-bus');
 
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
@@ -73,17 +73,9 @@ function toggleStickyNavbar() {
     displayAmenities(currentSlide);
   }
   
-  function adjustSliderWidth() {
-    const slider = document.querySelector(".slider");
-    const boxWidth = sliderContainer.offsetWidth / 6;
-    slider.style.width = `${boxWidth * totalBoxes}px`;
-  }
-  
-  window.addEventListener("resize", adjustSliderWidth);
-  adjustSliderWidth();
   displayAmenities(currentSlide);
   setInterval(slideToNext, 3000); // Adjust the interval time as needed (3000ms = 3 seconds)
   
 
-
+  
   
