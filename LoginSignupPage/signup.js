@@ -1,3 +1,21 @@
+
+//custome alert
+function openCustomAlert(message) {
+    const customAlert = document.getElementById('customAlert');
+    const customAlertMessage = document.getElementById('customAlertMessage');
+  
+    customAlertMessage.textContent = message;
+    customAlert.style.display = 'block';
+    setTimeout(()=>{
+        closeCustomAlert();  
+    },3000)
+  }
+  
+  function closeCustomAlert() {
+    const customAlert = document.getElementById('customAlert');
+    customAlert.style.display = 'none';
+  }
+  
 // Function to show the custom toast notification
 function showToast(message) {
     const toastContainer = document.getElementById("customToastContainer");
@@ -8,7 +26,7 @@ function showToast(message) {
     toastContainer.appendChild(toast);
 
     // Auto-hide the toast after 3 seconds (adjust as needed)
-    setTimeout(function() {
+    setTimeout(function () {
         toastContainer.removeChild(toast);
     }, 3000);
 }
@@ -31,6 +49,42 @@ function add_row() {
         return false;
     }
 
-    // var form = $('#add_form')[0]; 
-    // var formData = new FormData(form);
+    let obj = {
+        "userName": username,
+        "password": password,
+        "firstName": firstname,
+        "lastName": lastname,
+        "contact": mobile,
+        "email": email
+    }
+    addUser(obj);
+}
+
+
+function addUser(obj) {
+    let url = "http://localhost:8080/user/add";
+
+    fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json', // Specify that we're sending JSON data
+            },
+            body: JSON.stringify(obj), // Convert the data to JSON format
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.userLoginId == null) {
+                 openCustomAlert(data.message);
+                console.log(data);
+            } else {
+                showToast("User SignUp SucessFull!!");
+                openCustomAlert("User SignUp SucessFull!!");
+                console.log(data);
+            }
+
+            //change page location from here after ssucessfull signup
+        })
+        .catch(error => {
+            // console.error('Error posting data:', error);
+        });
 }

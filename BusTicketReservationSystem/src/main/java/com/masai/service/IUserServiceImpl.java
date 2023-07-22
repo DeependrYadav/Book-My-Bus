@@ -23,6 +23,7 @@ public class IUserServiceImpl implements IUserService{
 	@Override
 	public User addUser(User user) throws UserException {
 		User u= uRepo.findByUserName(user.getUserName());
+		
 		if(u!=null) {
 			throw new UserException("User already exist with this username.");
 		}

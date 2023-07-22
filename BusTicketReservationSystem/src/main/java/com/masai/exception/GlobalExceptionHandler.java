@@ -72,8 +72,8 @@ public class GlobalExceptionHandler {
 //		me.printStackTrace();
 		MyErrorDetails err= new MyErrorDetails();
 		err.setTimestamp(LocalDateTime.now());
-		err.setMessage("Validation Error");
-		err.setDetails(me.getBindingResult().getFieldError().getDefaultMessage());
+		err.setMessage(me.getBindingResult().getFieldError().getDefaultMessage());
+		err.setDetails(me.getMessage());
 		
 		return new ResponseEntity<MyErrorDetails>(err,HttpStatus.BAD_REQUEST);
 	}
