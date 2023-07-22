@@ -9,6 +9,14 @@
 </head>
 
 <body>
+    <!-- The custom alert dialog -->
+    <div class="custom-alert" id="customAlert">
+        <div class="custom-alert-content">
+            <p id="customAlertMessage"></p>
+            <button onclick="closeCustomAlert()">OK</button>
+        </div>
+    </div>
+
     <div id="customToastContainer"></div>
     <!-- Account Section Starts Here -->
     <section class="account-section bg_img" style="background: url(./images/61f281283d54b1643282728.jpg) bottom left; ">
@@ -24,20 +32,20 @@
                     </div>
                 </div>
                 <form class="account-form row" method="POST" id="add_form" name="add_form">
-                        <div class="form_element">
-                            <div class="form--group">
-                                <label for="name">UserName <span>*</span></label>
-                                <input id="username" type="text" class="form--control" name="name" value=""
-                                    placeholder="Enter UserName" required="">
-                            </div>
+                    <div class="form_element">
+                        <div class="form--group">
+                            <label for="name">UserName <span>*</span></label>
+                            <input id="username" type="text" class="form--control" name="name" value=""
+                                placeholder="Enter UserName" required="">
                         </div>
-                        <div class="form_element">
-                            <div class="form--group">
-                                <label for="password">Password <span>*</span></label>
-                                <input id="password" type="password" class="form--control" name="password"
-                                    placeholder="Enter Your Password" required="">
-                            </div>
+                    </div>
+                    <div class="form_element">
+                        <div class="form--group">
+                            <label for="password">Password <span>*</span></label>
+                            <input id="password" type="password" class="form--control" name="password"
+                                placeholder="Enter Your Password" required="">
                         </div>
+                    </div>
                     <div class="form_element">
                         <div class="form--group custom--checkbox">
                             <input type="checkbox" name="agree" id="agree">
@@ -60,6 +68,6 @@
     </section>
     <!-- Account Section Ends Here -->
 </body>
-<script src="./signup.js"></script>
+<script src="./login.js"></script>
 
 </html>
