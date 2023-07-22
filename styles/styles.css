@@ -4,6 +4,7 @@ body {
     /* font-family: monospace; */
 }
   
+/* ---- Css For Navbar ---- */
 .navbar {
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, #0E9E4D 0px 2px 6px -2px;
@@ -111,8 +112,10 @@ body {
   z-index: 100;
 }
 
+/* Css for Home Content */
+
 .home-container{
-  background: url('/honest-wing-5796/images/Home_page_banner_demo.png') repeat-x bottom;
+  background: url('/honest-wing-5796/images/Home_page_banner.png') repeat-x bottom;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -127,13 +130,18 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   right: 0;
-  bottom: 16px; /* Add this to position the bus at the right bottom corner */
+  bottom: 75px; /* Add this to position the bus at the right bottom corner */
   width: 200px;
   height: 150px;
   position: absolute; /* Add this to position the .moving-bus relative to .home-container */
   animation: moveBus 12s linear infinite;
   /* transform-origin: 100% 50%; */
 }
+
+.moving-bus-sticky{
+  bottom: 165px;
+}
+
 .home-tagline-and-button{
   display: block;
   margin-top: 100px;
@@ -157,7 +165,7 @@ body {
   background-color: #2dc770;
 }
 
-
+/* Animation For Moving Bus */
 @keyframes moveBus {
   0%{
     transform: translateX(0px) translateY(0px) rotate(0deg);
@@ -170,9 +178,138 @@ body {
   }
 }
 
+
+/* Home Booking Criteria*/
+.home-booking-criteria{
+  display: block;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.hbc-heading{
+  margin: auto;
+  padding: 10px;
+}
+
+.hbc-heading > h1{
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.hbc-heading > p{
+  width: 48%;
+  margin: auto;
+  line-height: 26px;
+  text-align: center;
+}
+
+.hbc-containers{
+  width: 85%;
+  margin: auto;
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.hbc-containers > div{
+ width: 85%;
+ box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+ padding: 20px 30px;
+ border-radius: 5px;
+}
+.hbc-containers > div:hover{
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.hbc-containers > div > img{
+  width: 40%;
+  display: block;
+  margin: auto;
+  margin-bottom: -5px;
+}
+.hbc-containers > div > h2, .hbc-containers > div > p{
+  text-align: center;
+  line-height: 26px;
+}
+.hbc-containers > div > p{
+  font-size: 16px;
+}
+
+.slider-container {
+  width: 90%;
+  margin: auto;
+  overflow: hidden;
+  margin-top: 40px;
+  justify-content: center; /* Center the slider horizontally */
+  align-items: center; /* Center the slider vertically */
+  padding: 20px;
+}
+
+.slider {
+  display: flex;
+  gap: 40px;
+  transition: transform 5s ease; /* Smooth transition for sliding effect */
+  flex-wrap: nowrap; /* Prevent items from wrapping to new lines */
+}
+
+
+.box {
+  padding: 20px;
+  /* margin: 10px; */
+  width: 10vw;
+  height: 120px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #ffffff;
+  text-align: center;
+  transition: box-shadow 0.3s, border-color 0.3s;
+  border-radius: 5px;
+  color: rgb(162, 161, 161);
+}
+.box > div{
+  display: block;
+}
+.amenity > i{
+  font-size: 48px;
+}
+
+.amenity > h2{
+  font-size: 22px;
+}
+
+.box:hover{
+  box-shadow: rgba(14, 158, 77, 0.24) 0px 3px 8px; /* Box-shadow on hover */
+  border-color: #0E9E4D; /* Box border color on hover */
+}
+.box:hover .amenity {
+  color: #0E9E4D; /* Change content color inside the box on hover */
+}
+
+
+.amenity {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Update CSS to style Font Awesome icons */
+
+
+
+
+
+
+
+
+
+
+
+
 /* Media Query for Small and Medium Screens */
 @media screen and (max-width: 800px) {
 
+  /* Navbar */
 .logo img {
     max-height: 50px;
 }
@@ -255,15 +392,20 @@ body {
 .navbar.responsive .account {
   order: -1;
 }
+
+/* Responsive code for moving bus */
 .moving-bus{
   background: url('/honest-wing-5796/images/Bus.png');
   background-repeat: no-repeat;
   right: 0;
-  bottom: 30px;
+  bottom: 85px;
   width: 200px;
   height: 75px;
   position: absolute; 
   animation: moveBus 6s linear infinite;
+}
+.moving-bus-sticky{
+  bottom: 160px;
 }
 @keyframes moveBus {
   0%{
@@ -276,4 +418,10 @@ body {
     transform: translateX(-100vw);
   }
 }
+
+.hbc-containers{
+  grid-template-columns: repeat(1, 1fr);
 }
+
+}
+
