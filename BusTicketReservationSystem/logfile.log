@@ -743,3 +743,26 @@ Caused by: java.lang.ClassNotFoundException: CurrentUserSession
 2023-07-23T09:38:10.938+05:30  INFO 11652 --- [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-07-23T09:38:10.939+05:30  INFO 11652 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
 2023-07-23T09:38:10.945+05:30  INFO 11652 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2023-07-23T09:38:11.083+05:30  INFO 11652 --- [restartedMain] .m.BusTicketReservationSystemApplication : Starting BusTicketReservationSystemApplication using Java 20.0.1 with PID 11652 (C:\Users\deepe\OneDrive\Desktop\honest-wing-5796\BusTicketReservationSystem\target\classes started by deepe in C:\Users\deepe\OneDrive\Desktop\honest-wing-5796\BusTicketReservationSystem)
+2023-07-23T09:38:11.083+05:30  INFO 11652 --- [restartedMain] .m.BusTicketReservationSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2023-07-23T09:38:11.625+05:30  INFO 11652 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-23T09:38:11.673+05:30  INFO 11652 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 6 JPA repository interfaces.
+2023-07-23T09:38:11.857+05:30  INFO 11652 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-07-23T09:38:11.857+05:30  INFO 11652 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-23T09:38:11.857+05:30  INFO 11652 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-07-23T09:38:11.890+05:30  INFO 11652 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-07-23T09:38:11.890+05:30  INFO 11652 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 803 ms
+2023-07-23T09:38:11.942+05:30  INFO 11652 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-23T09:38:11.962+05:30  INFO 11652 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-07-23T09:38:11.963+05:30  INFO 11652 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-07-23T09:38:11.964+05:30  INFO 11652 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2023-07-23T09:38:11.987+05:30  INFO 11652 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2fcbd577
+2023-07-23T09:38:11.987+05:30  INFO 11652 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2023-07-23T09:38:12.035+05:30  INFO 11652 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-07-23T09:38:12.200+05:30  INFO 11652 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-23T09:38:12.317+05:30  INFO 11652 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-23T09:38:12.534+05:30  WARN 11652 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-23T09:38:12.816+05:30  INFO 11652 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-07-23T09:38:12.833+05:30  INFO 11652 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-07-23T09:38:12.837+05:30  INFO 11652 --- [restartedMain] .m.BusTicketReservationSystemApplication : Started BusTicketReservationSystemApplication in 1.813 seconds (process running for 1668.637)
+2023-07-23T09:38:12.839+05:30  INFO 11652 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
