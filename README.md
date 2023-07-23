@@ -22,9 +22,12 @@
 # Technology used 
 
 - Java
-- MySQL
+- Javascript
 - Spring Boot
 - Spring data JPA
+- HTML
+- CSS
+- MySQL
 - RESTful api
 - Hibernate
 - Swagger
