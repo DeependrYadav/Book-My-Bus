@@ -31,7 +31,6 @@ import jakarta.validation.Valid;
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/reservation")
-@CrossOrigin("*")
 public class ReservationController {
 
 	@Autowired
