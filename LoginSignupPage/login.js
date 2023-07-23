@@ -48,7 +48,8 @@ function sign_in() {
     "userName": username,
     "password": password
   }
-  loginUser(signInObj);
+  if(signInObj.username == "admin" && signInObj.password == "admin1234")loginAdmin(signInObj);
+  else loginUser(signInObj);
 }
 
 
@@ -70,7 +71,36 @@ function loginUser(obj){
     // } else {
         // showToast("User Login SucessFull!!");
         // openCustomAlert("WelCome" +data.type);
+        localStorage.setItem("uuid",json.stringify(data.key));
         console.log(data);
+        // }
+        //change page location from here after ssucessfull signup
+        
+    })
+    .catch(error => {
+        // console.error('Error posting data:', error);
+});
+}
+function loginAdmin(obj){
+ let url="http://localhost:8080/admin/login";
+
+ fetch(url, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json', // Specify that we're sending JSON data
+    },
+    body: JSON.stringify(obj), // Convert the data to JSON format
+})
+.then(response => response.json())
+.then(data => {
+    // if (data.userLoginId == null) {
+        //      openCustomAlert(data.message);
+        //     console.log(data);
+        // } else {
+            // showToast("User Login SucessFull!!");
+            // openCustomAlert("WelCome" +data.type);
+            localStorage.setItem("uuid",json.stringify(data.key));
+            console.log(data);
     // }
 
     //change page location from here after ssucessfull signup

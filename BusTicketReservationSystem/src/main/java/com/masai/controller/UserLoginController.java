@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.masai.model.CurrentUserSession;
 import com.masai.model.LoginDTO;
 import com.masai.service.LoginService;
 
@@ -26,9 +27,9 @@ public class UserLoginController {
 	private LoginService lService;
 	
 	@PostMapping("/login")
-	public ResponseEntity<String> userLoginHandler(@Valid @RequestBody LoginDTO dto) throws LoginException{
-		String msg=lService.logIntoAccount(dto);
-		return new ResponseEntity<String>(msg,HttpStatus.ACCEPTED);
+	public ResponseEntity<CurrentUserSession> userLoginHandler(@Valid @RequestBody LoginDTO dto) throws LoginException{
+//		String msg=lService.logIntoAccount(dto);
+		return new ResponseEntity<CurrentUserSession>(lService.logIntoAccount(dto),HttpStatus.ACCEPTED);
 	}
 	
 	@PostMapping("/logout")

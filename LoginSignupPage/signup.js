@@ -85,6 +85,6 @@ function addUser(obj) {
             //change page location from here after ssucessfull signup
         })
         .catch(error => {
-            // console.error('Error posting data:', error);
+            // console.error('Error posting data:', error.);
         });
 }
