@@ -26,7 +26,7 @@ public class LoginServiceImpl implements LoginService{
 	private SessionRepo sRepo;
 
 	@Override
-	public String logIntoAccount(LoginDTO dto) throws LoginException {
+	public CurrentUserSession logIntoAccount(LoginDTO dto) throws LoginException {
 		User user=uRepo.findByUserName(dto.getUserName());
 		if(user==null) {
 			throw new LoginException("Please Enter a valid username.");
@@ -37,9 +37,10 @@ public class LoginServiceImpl implements LoginService{
 		}
 		if(user.getPassword().equals(dto.getPassword())) {
 			String key=RandomString.make(6);
-			CurrentUserSession currentUserSession=new CurrentUserSession(user.getUserLoginId(),"user",key,LocalDateTime.now());
+			String name= user.getFirstName().concat(" "+user.getLastName());
+			CurrentUserSession currentUserSession=new CurrentUserSession(user.getUserLoginId(),name,key,LocalDateTime.now());
 			sRepo.save(currentUserSession);
-			return currentUserSession.toString();
+			return currentUserSession;
 		}else {
 			throw new LoginException("Please Enter a valid password");
 		}

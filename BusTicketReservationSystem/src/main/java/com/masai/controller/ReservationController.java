@@ -29,6 +29,7 @@ import jakarta.validation.Valid;
 //import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/reservation")
 @CrossOrigin("*")
 public class ReservationController {

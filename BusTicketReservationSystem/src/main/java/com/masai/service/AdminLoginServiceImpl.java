@@ -21,7 +21,7 @@ public class AdminLoginServiceImpl implements AdminLoginService{
 	private SessionRepo sRepo;
 	
 	@Override
-	public String logIntoAccount(AdminDto dto) throws LoginException {
+	public CurrentUserSession logIntoAccount(AdminDto dto) throws LoginException {
 		// TODO Auto-generated method stub
 		Admin adm=new Admin();
 		if(!adm.username.equalsIgnoreCase(dto.getUsername())) {
@@ -35,7 +35,7 @@ public class AdminLoginServiceImpl implements AdminLoginService{
 			String key=RandomString.make(6);
 			CurrentUserSession currentUserSession=new CurrentUserSession(adm.id,"admin",key,LocalDateTime.now());
 			sRepo.save(currentUserSession);
-			return currentUserSession.toString();
+			return currentUserSession;
 		}else {
 			throw new LoginException("Please Enter a valid Password");
 		}
