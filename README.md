@@ -76,6 +76,9 @@
 ![Screenshot 2023-07-23 231430](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/769f3ab9-f0c0-471f-b3bf-8b635940bdd8)
 </br>
 
+## **User landing page**
+![Screenshot 2023-07-24 005041](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/d2e58fb4-a7ed-4554-9989-7c7d9723995f)
+
 ## **User Module**
 *Customer can signup first if not registered earlier*
 </br>
@@ -115,6 +118,16 @@ Worked on Backend
 #### Shivam kumar Jha
 > Github: [Shivam6209](https://github.com/Shivam6209)
 Worked on Login and SignUp page
+
+
+#### Ramanjeet Singh
+> Github: [gzbsingh](https://github.com/gzbsingh)
+Worked on Admin panel
+
+
+#### N MOHAMMED NAWAZ
+> Github: [nmohammednawaz](https://github.com/nmohammednawaz)
+Worked on User side
 
 
 
