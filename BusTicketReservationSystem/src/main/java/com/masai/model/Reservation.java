@@ -22,10 +22,8 @@ public class Reservation {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer reservationId;
 	
-	@JsonIgnore
 	private String reservationStatus;
 	
-	@JsonIgnore
 	private String reservationType;
 	
 	@Future(message = "Date should not be in past *")
@@ -36,7 +34,6 @@ public class Reservation {
 	
 //	@NotNull(message = "Reservation Time is mandatory *")
 //	@JsonFormat(pattern = "hh-mm-ss", shape = Shape.STRING)
-	@JsonIgnore
 	private LocalTime reservationTime;
 	
 //	@NotNull(message = "Reservation source is mandatory *")
@@ -47,20 +44,20 @@ public class Reservation {
 	private String destination;
 	
 	
-
-	@JsonIgnore
+	
 	@OneToOne
 	private Bus bus;
 
 
-	public Reservation(Integer reservationId, String reservationStatus, String reservationType,
-			LocalDate reservationDate, LocalTime reservationTime, String source, String destination) {
+	
+
+
+	public Reservation(Integer reservationId,
+			@Future(message = "Date should not be in past *") LocalDate reservationDate, String source,
+			String destination) {
 		super();
 		this.reservationId = reservationId;
-		this.reservationStatus = reservationStatus;
-		this.reservationType = reservationType;
 		this.reservationDate = reservationDate;
-		this.reservationTime = reservationTime;
 		this.source = source;
 		this.destination = destination;
 	}
