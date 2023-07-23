@@ -56,37 +56,47 @@
 ## **Er Diagram** 
 *Er diagram of our project*
 </br>
+![39a568c0-b77f-4ca1-b87a-72ce3eeaa7e6](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/9c8bb70a-5f68-4210-8a88-d8796f8e165c)
 
 ## **All Modules** 
 *All modules of our project*
 </br>
+![Screenshot 2023-07-23 231013](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/0bab30a1-8c4b-4032-b528-0532c49d4fc8)
+
 
 ## **Admin Module** 
 *Admin can login by using username (admin) and password (admin1234)*
 </br>
-
+![Screenshot 2023-07-23 231430](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/769f3ab9-f0c0-471f-b3bf-8b635940bdd8)
 
 ## **User Module**
 *Customer can signup first if not registered earlier*
 </br>
+![Screenshot 2023-07-23 231529](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/32f62e58-51fc-4725-9bd6-90c77f853de2)
+
 *Customer can login with earlier provided username and password*
 </br>
+![Screenshot 2023-07-23 230424](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/da8cb5e2-616f-4294-a5c2-f55853cf28eb)
 
 ## **Bus Module** 
 *Admin can add Bus by providing neccessary details*
 </br>
+![Screenshot 2023-07-23 230620](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/6443f399-696f-45bc-8be9-877490633c47)
 
 ## **Route Module**
 *Admin can add Route by providing neccessary details*
 </br>
+![Screenshot 2023-07-23 230514](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/abafa311-7b93-42de-bd8f-9011bd88e8ba)
 
 ## **Reservation Module**
 *User can book Reservation by selecting Source and destination*
 </br>
+![Screenshot 2023-07-23 230534](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/bd23d53e-a2d3-4b31-9aea-8c61f7ef2cb6)
 
 ## **Feedback Module**
 *User can give feedback for bus experience*
 </br>
+![Screenshot 2023-07-23 230559](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/097301e3-a2be-4718-a538-3f6ae1537c82)
 
 # Contributor
 
