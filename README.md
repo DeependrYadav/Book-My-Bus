@@ -67,10 +67,14 @@
 ![Screenshot 2023-07-23 231013](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/0bab30a1-8c4b-4032-b528-0532c49d4fc8)
 
 
-## **Admin Module** 
+## **Admin Home page and Module** 
 *Admin can login by using username (admin) and password (admin1234)*
+### Admin Home page
+![Screenshot 2023-07-23 232552](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/215875e6-4558-4599-96ab-d1fe33b3649e)
 </br>
+### Admin Module
 ![Screenshot 2023-07-23 231430](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/769f3ab9-f0c0-471f-b3bf-8b635940bdd8)
+</br>
 
 ## **User Module**
 *Customer can signup first if not registered earlier*
