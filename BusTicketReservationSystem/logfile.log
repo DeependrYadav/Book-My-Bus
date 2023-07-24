@@ -1,0 +1,127 @@
+2023-07-24T12:02:08.912+05:30  INFO 37160 --- [restartedMain] .m.BusTicketReservationSystemApplication : Starting BusTicketReservationSystemApplication using Java 17.0.2 with PID 37160 (E:\honest-wing-5796\BusTicketReservationSystem\target\classes started by Shivam Jha in E:\honest-wing-5796\BusTicketReservationSystem)
+2023-07-24T12:02:08.918+05:30  INFO 37160 --- [restartedMain] .m.BusTicketReservationSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2023-07-24T12:02:08.971+05:30  INFO 37160 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-07-24T12:02:08.971+05:30  INFO 37160 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-07-24T12:02:09.881+05:30  INFO 37160 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-24T12:02:09.957+05:30  INFO 37160 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 67 ms. Found 6 JPA repository interfaces.
+2023-07-24T12:02:10.570+05:30  INFO 37160 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2023-07-24T12:02:10.582+05:30  INFO 37160 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-24T12:02:10.582+05:30  INFO 37160 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-07-24T12:02:10.655+05:30  INFO 37160 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-07-24T12:02:10.656+05:30  INFO 37160 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1683 ms
+2023-07-24T12:02:10.809+05:30  INFO 37160 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-24T12:02:10.887+05:30  INFO 37160 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.5.Final
+2023-07-24T12:02:10.890+05:30  INFO 37160 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-07-24T12:02:11.050+05:30  INFO 37160 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-07-24T12:02:11.220+05:30  INFO 37160 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-07-24T12:02:11.240+05:30  INFO 37160 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-07-24T12:02:11.609+05:30  INFO 37160 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4c8d3c69
+2023-07-24T12:02:11.610+05:30  INFO 37160 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-07-24T12:02:11.989+05:30  INFO 37160 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-07-24T12:02:12.852+05:30  INFO 37160 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-24T12:02:13.145+05:30  INFO 37160 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-24T12:02:13.525+05:30  WARN 37160 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'reservationController': Unsatisfied dependency expressed through field 'rService': No qualifying bean of type 'com.masai.service.ReservationService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-07-24T12:02:13.526+05:30  INFO 37160 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-24T12:02:13.530+05:30  INFO 37160 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-07-24T12:02:13.538+05:30  INFO 37160 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-07-24T12:02:13.540+05:30  INFO 37160 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-07-24T12:02:13.553+05:30  INFO 37160 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-07-24T12:02:13.574+05:30 ERROR 37160 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field rService in com.masai.controller.ReservationController required a bean of type 'com.masai.service.ReservationService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.masai.service.ReservationService' in your configuration.
+
+2023-07-24T12:04:23.256+05:30  INFO 10400 --- [restartedMain] .m.BusTicketReservationSystemApplication : Starting BusTicketReservationSystemApplication using Java 17.0.2 with PID 10400 (E:\honest-wing-5796\BusTicketReservationSystem\target\classes started by Shivam Jha in E:\honest-wing-5796\BusTicketReservationSystem)
+2023-07-24T12:04:23.260+05:30  INFO 10400 --- [restartedMain] .m.BusTicketReservationSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2023-07-24T12:04:23.304+05:30  INFO 10400 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-07-24T12:04:23.305+05:30  INFO 10400 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-07-24T12:04:23.938+05:30  INFO 10400 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-24T12:04:24.011+05:30  INFO 10400 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 6 JPA repository interfaces.
+2023-07-24T12:04:24.552+05:30  INFO 10400 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2023-07-24T12:04:24.562+05:30  INFO 10400 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-24T12:04:24.563+05:30  INFO 10400 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-07-24T12:04:24.638+05:30  INFO 10400 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-07-24T12:04:24.638+05:30  INFO 10400 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1333 ms
+2023-07-24T12:04:24.783+05:30  INFO 10400 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-24T12:04:24.857+05:30  INFO 10400 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.5.Final
+2023-07-24T12:04:24.858+05:30  INFO 10400 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-07-24T12:04:25.001+05:30  INFO 10400 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-07-24T12:04:25.169+05:30  INFO 10400 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-07-24T12:04:25.189+05:30  INFO 10400 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-07-24T12:04:25.529+05:30  INFO 10400 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5ed24f02
+2023-07-24T12:04:25.531+05:30  INFO 10400 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-07-24T12:04:25.863+05:30  INFO 10400 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-07-24T12:04:26.686+05:30  INFO 10400 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-24T12:04:26.877+05:30  INFO 10400 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-24T12:04:27.376+05:30  WARN 10400 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-24T12:04:28.134+05:30  INFO 10400 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-07-24T12:04:28.188+05:30  INFO 10400 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2023-07-24T12:04:28.199+05:30  INFO 10400 --- [restartedMain] .m.BusTicketReservationSystemApplication : Started BusTicketReservationSystemApplication in 5.275 seconds (process running for 6.053)
+2023-07-24T12:04:51.089+05:30  INFO 10400 --- [http-nio-8088-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-24T12:04:51.090+05:30  INFO 10400 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-07-24T12:04:51.093+05:30  INFO 10400 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-07-24T12:04:52.045+05:30  INFO 10400 --- [http-nio-8088-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 572 ms
+2023-07-24T12:05:09.851+05:30  WARN 10400 --- [http-nio-8088-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [javax.security.auth.login.LoginException: User not logged in with this username.]
+2023-07-24T12:06:58.041+05:30  INFO 10400 --- [RMI TCP Connection(12)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-07-24T12:06:58.058+05:30  INFO 10400 --- [RMI TCP Connection(12)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-07-24T12:06:58.060+05:30  INFO 10400 --- [RMI TCP Connection(12)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-07-24T12:06:58.067+05:30  INFO 10400 --- [RMI TCP Connection(12)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-24T12:06:58.070+05:30  INFO 10400 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-07-24T12:06:58.080+05:30  INFO 10400 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-07-24T12:58:04.392+05:30  INFO 39240 --- [restartedMain] .m.BusTicketReservationSystemApplication : Starting BusTicketReservationSystemApplication using Java 17.0.2 with PID 39240 (E:\honest-wing-5796\BusTicketReservationSystem\target\classes started by Shivam Jha in E:\honest-wing-5796\BusTicketReservationSystem)
+2023-07-24T12:58:04.399+05:30  INFO 39240 --- [restartedMain] .m.BusTicketReservationSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2023-07-24T12:58:04.494+05:30  INFO 39240 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-07-24T12:58:04.495+05:30  INFO 39240 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-07-24T12:58:05.608+05:30  INFO 39240 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-24T12:58:05.709+05:30  INFO 39240 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 90 ms. Found 6 JPA repository interfaces.
+2023-07-24T12:58:06.572+05:30  INFO 39240 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2023-07-24T12:58:06.590+05:30  INFO 39240 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-24T12:58:06.591+05:30  INFO 39240 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-07-24T12:58:06.701+05:30  INFO 39240 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-07-24T12:58:06.702+05:30  INFO 39240 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2206 ms
+2023-07-24T12:58:06.912+05:30  INFO 39240 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-24T12:58:07.023+05:30  INFO 39240 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.5.Final
+2023-07-24T12:58:07.026+05:30  INFO 39240 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-07-24T12:58:07.260+05:30  INFO 39240 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-07-24T12:58:07.517+05:30  INFO 39240 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-07-24T12:58:07.542+05:30  INFO 39240 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-07-24T12:58:08.029+05:30  INFO 39240 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4060da5
+2023-07-24T12:58:08.032+05:30  INFO 39240 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-07-24T12:58:08.508+05:30  INFO 39240 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-07-24T12:58:09.726+05:30  INFO 39240 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-24T12:58:10.100+05:30  INFO 39240 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-24T12:58:10.893+05:30  WARN 39240 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-24T12:58:12.125+05:30  INFO 39240 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-07-24T12:58:12.199+05:30  INFO 39240 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2023-07-24T12:58:12.215+05:30  INFO 39240 --- [restartedMain] .m.BusTicketReservationSystemApplication : Started BusTicketReservationSystemApplication in 8.355 seconds (process running for 9.459)
+2023-07-24T13:00:52.750+05:30  INFO 39240 --- [http-nio-8088-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-24T13:00:52.761+05:30  INFO 39240 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-07-24T13:00:52.791+05:30  INFO 39240 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 30 ms
+2023-07-24T13:01:37.825+05:30  WARN 39240 --- [http-nio-8088-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [javax.security.auth.login.LoginException: User already Logged in with this username.]
+2023-07-24T13:06:09.444+05:30  WARN 39240 --- [http-nio-8088-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [javax.security.auth.login.LoginException: User already Logged in with this username.]
+2023-07-24T13:54:06.292+05:30  WARN 39240 --- [http-nio-8088-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [javax.security.auth.login.LoginException: User not logged in with this username.]
+2023-07-24T13:54:20.038+05:30  WARN 39240 --- [http-nio-8088-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [javax.security.auth.login.LoginException: User not logged in with this username.]
+2023-07-24T13:54:21.688+05:30  WARN 39240 --- [http-nio-8088-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [javax.security.auth.login.LoginException: User not logged in with this username.]
+2023-07-24T13:54:23.927+05:30  WARN 39240 --- [http-nio-8088-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [javax.security.auth.login.LoginException: User not logged in with this username.]
+2023-07-24T13:57:20.782+05:30  WARN 39240 --- [http-nio-8088-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2023-07-24T13:57:21.091+05:30  WARN 39240 --- [http-nio-8088-exec-3] o.s.web.servlet.PageNotFound             : No mapping for GET /favicon.ico
+2023-07-24T13:57:21.155+05:30  WARN 39240 --- [http-nio-8088-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /favicon.ico.]
+2023-07-24T14:24:38.720+05:30  WARN 39240 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m29s252ms547µs).
+2023-07-24T14:26:24.163+05:30  WARN 39240 --- [http-nio-8088-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2023-07-24T14:26:24.792+05:30  WARN 39240 --- [http-nio-8088-exec-8] o.s.web.servlet.PageNotFound             : No mapping for GET /favicon.ico
+2023-07-24T14:26:24.804+05:30  WARN 39240 --- [http-nio-8088-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /favicon.ico.]

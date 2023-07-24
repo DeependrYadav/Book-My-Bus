@@ -36,7 +36,7 @@ public class IFeedbackServiceImpl implements IFeedbackService{
 	public Feedback addFeedback( Integer busId, Feedback feedback,String key) throws FeedbackException, UserException, BusException {
 		CurrentUserSession loggedInUser=srepo.findByUuid(key);
 		if(loggedInUser==null) {
-			throw new UserException("Please provide a valid key to update user");
+			throw new UserException("Please provide a valid key to add Feedback");
 		}
 		User user = udao.findById(loggedInUser.getUserId()).orElseThrow(() -> new UserException("User with Id " + loggedInUser.getUserId() + " not found"));
 		if(user.getUserLoginId()==loggedInUser.getUserId()) {

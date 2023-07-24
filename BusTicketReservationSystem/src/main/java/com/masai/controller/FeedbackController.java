@@ -20,6 +20,7 @@ import com.masai.exception.FeedbackException;
 import com.masai.exception.UserException;
 import com.masai.model.Feedback;
 import com.masai.service.IFeedbackServiceImpl;
+import com.masai.service.ReservationService;
 
 import jakarta.validation.Valid;
 
@@ -30,10 +31,12 @@ public class FeedbackController {
 
 	@Autowired
 	private IFeedbackServiceImpl fservice;
+	@Autowired
+	private ReservationService rService;
 	
-	@PostMapping("/add/{busId}")
-    public ResponseEntity<Feedback> addFeedbackHandler( @PathVariable("busId") Integer busId,@Valid @RequestBody Feedback feedback,@RequestParam String key) throws FeedbackException, UserException, BusException {
-		
+	@PostMapping("/add")
+    public ResponseEntity<Feedback> addFeedbackHandler(@Valid @RequestBody Feedback feedback,@RequestParam String key) throws FeedbackException, UserException, BusException {
+		Integer busId = rService.getCurrentUserReservedBusId();
 		Feedback f = fservice.addFeedback( busId, feedback,key);
 		
 		return new ResponseEntity<Feedback>(f, HttpStatus.CREATED);
