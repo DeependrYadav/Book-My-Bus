@@ -35,11 +35,10 @@ public class FeedbackController {
 	private ReservationService rService;
 	
 	@PostMapping("/add")
-    public ResponseEntity<Feedback> addFeedbackHandler(@Valid @RequestBody Feedback feedback,@RequestParam String key) throws FeedbackException, UserException, BusException {
+    public ResponseEntity<String> addFeedbackHandler(@Valid @RequestBody Feedback feedback,@RequestParam String key) throws FeedbackException, UserException, BusException {
 		Integer busId = rService.getCurrentUserReservedBusId();
-		Feedback f = fservice.addFeedback( busId, feedback,key);
 		
-		return new ResponseEntity<Feedback>(f, HttpStatus.CREATED);
+		return new ResponseEntity<String>(fservice.addFeedback( busId, feedback,key), HttpStatus.CREATED);
 	}
 	
 	@PutMapping("/update")

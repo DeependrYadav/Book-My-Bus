@@ -62,7 +62,7 @@ function add_row() {
 
 
 function addUser(obj) {
-    let url = "http://localhost:8080/user/add";
+    let url = "http://localhost:8088/user/add";
 
     fetch(url, {
             method: 'POST',

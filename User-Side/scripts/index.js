@@ -1,14 +1,24 @@
-const hamburger = document.getElementById('hamburger');
-const menu = document.getElementById('menu');
-const navbar = document.querySelector('.navbar');
 const moving_bus = document.querySelector('#moving-bus');
 
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  menu.classList.toggle('open');
-});
+////////////////////
+//custome alert
+function openCustomAlert(message) {
+  const customAlert = document.getElementById('customAlert');
+  const customAlertMessage = document.getElementById('customAlertMessage');
 
-// Function to toggle the sticky class on the navbar
+  customAlertMessage.textContent = message;
+  customAlert.style.display = 'block';
+  setTimeout(() => {
+      closeCustomAlert();
+      window.location.href="../User-Side/index.html";
+  }, 5000)
+}
+
+function closeCustomAlert() {
+  const customAlert = document.getElementById('customAlert');
+  customAlert.style.display = 'none';
+}
+
 function toggleStickyNavbar() {
   if (window.scrollY > navbar.offsetTop) {
     navbar.classList.add('sticky');
@@ -20,6 +30,13 @@ function toggleStickyNavbar() {
 }
 
 // Listen for scroll events and apply the sticky class accordingly
+//   moving_bus.classList.add('moving-bus-sticky');
+//   } else {
+//   moving_bus.classList.remove('moving-bus-sticky');
+//   }
+// }
+
+
 window.addEventListener('scroll', toggleStickyNavbar);
 
 
@@ -103,9 +120,9 @@ let account = document.getElementById("account");
 let profileImg = document.getElementById("profileImg");
 let logout = document.getElementById("logout");
 let username = JSON.parse(localStorage.getItem("username")) || "";
-console.log(username);
 if (username == "") {
   account.innerText = "LogIn"
+  account.style="border-radius: 5px; padding: 4px; background-color: #0E9E4D;color: white;";
   profileImg.style.display = "none";
   logout.style.display = "none";
 } else {
@@ -115,45 +132,27 @@ if (username == "") {
 
 function logoutUser() {
   let uuid = JSON.parse(localStorage.getItem("uuid"))||"";
-  if(uuid=""){
+  if(uuid==""){
     openCustomAlert("Please Login First");
   }else{
-    let url = "http://localhost:8088/user/logout?key=" + uuid;
-
+    let url = `http://localhost:8088/user/logout?key=${uuid}`;
+    console.log(uuid);
     fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json', // Specify that we're sending JSON data
-        },
+        method: 'POST'
       })
-      .then(response => response.json())
+      .then(response => response)
       .then(data => {
         openCustomAlert("User LogOut SucessFull!!");
         localStorage.setItem("username", JSON.stringify(""));
         localStorage.setItem("uuid", JSON.stringify(""));
+      
         console.log(data);
       })
       .catch(error => {
-        // console.error('Error posting data:', error);
+        console.error('Error posting data:', error);
       });
   }
  
 }
 
-////////////////////
-//custome alert
-function openCustomAlert(message) {
-  const customAlert = document.getElementById('customAlert');
-  const customAlertMessage = document.getElementById('customAlertMessage');
 
-  customAlertMessage.textContent = message;
-  customAlert.style.display = 'block';
-  setTimeout(() => {
-      closeCustomAlert();
-  }, 5000)
-}
-
-function closeCustomAlert() {
-  const customAlert = document.getElementById('customAlert');
-  customAlert.style.display = 'none';
-}

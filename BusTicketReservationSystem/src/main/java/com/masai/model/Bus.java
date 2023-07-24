@@ -27,7 +27,7 @@ public class Bus {
 	
 	private String busType;
 	
-	private String routeForm;
+	private String routeFrom;
 	
 	private String routeTo;
 	
@@ -88,11 +88,11 @@ public class Bus {
 	}
 
 	public String getRouteForm() {
-		return routeForm;
+		return routeFrom;
 	}
 
 	public void setRouteForm(String routeForm) {
-		this.routeForm = routeForm;
+		this.routeFrom = routeForm;
 	}
 
 	public String getRouteTo() {
@@ -140,7 +140,7 @@ public class Bus {
 	@Override
 	public String toString() {
 		return "Bus [busId=" + busId + ", busName=" + busName + ", driverName=" + driverName + ", busType=" + busType
-				+ ", routeForm=" + routeForm + ", routeTo=" + routeTo + ", arrivalTime=" + arrivalTime
+				+ ", routeForm=" + routeFrom + ", routeTo=" + routeTo + ", arrivalTime=" + arrivalTime
 				+ ", departureTime=" + departureTime + ", seats=" + seats + ", availabeSeats=" + availabeSeats + "]";
 	}
 	

@@ -37,7 +37,7 @@ public class LoginServiceImpl implements LoginService{
 		}
 		if(user.getPassword().equals(dto.getPassword())) {
 			String key=RandomString.make(6);
-			String name= user.getFirstName().concat(" "+user.getLastName());
+			String name= user.getFirstName().concat("  "+user.getLastName());
 			CurrentUserSession currentUserSession=new CurrentUserSession(user.getUserLoginId(),name,key,LocalDateTime.now());
 			sRepo.save(currentUserSession);
 			return currentUserSession;

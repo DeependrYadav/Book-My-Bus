@@ -1,4 +1,14 @@
+let currUserID = JSON.parse(localStorage.getItem('uuid'));
+
+if(currUserID == undefined){
+    currUserID = null;
+}
+
+localStorage.setItem('uuid', JSON.stringify(currUserID));
+
 //custome alert
+
+
 function openCustomAlert(message) {
     const customAlert = document.getElementById('customAlert');
     const customAlertMessage = document.getElementById('customAlertMessage');
@@ -7,9 +17,6 @@ function openCustomAlert(message) {
     customAlert.style.display = 'block';
     setTimeout(() => {
         closeCustomAlert();
-        if(message!="Invalid Credantials"){
-         window.location.href="../User-Side/index.html";
-        }
     }, 5000)
 }
 
@@ -56,6 +63,7 @@ function sign_in() {
 }
 
 
+<<<<<<< HEAD:LoginSignupPage/login.js
 function loginUser(obj) {
     let url = "http://localhost:8088/user/login";
 
@@ -70,13 +78,16 @@ function loginUser(obj) {
         .then(data => {
             // console.log(data);
             if (data.userId== null) {
+                console.log("If"+data);
                 openCustomAlert("Invalid Credantials");
             } else {
                 showToast("User Login SucessFull!!");
-                openCustomAlert("Welcome " + data.type);
+                console.log(data);
+                openCustomAlert("WelCome " + data.type);
                 localStorage.setItem("uuid", JSON.stringify(data.uuid));
                 localStorage.setItem("username", JSON.stringify(data.type));
-               
+                console.log("else"+data);
+               window.location.href="../User-Side/index.html";
                 //change page location from here after ssucessfull signup
             }
 
@@ -86,6 +97,45 @@ function loginUser(obj) {
             // console.error('Error posting data:', error);
         });
 }
+=======
+function loginUser(obj){
+ let url="http://localhost:8088/user/login";
+
+ fetch(url, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json', // Specify that we're sending JSON data
+    },
+    body: JSON.stringify(obj), // Convert the data to JSON format
+})
+.then(response => response.json())
+.then(data => {
+    console.log(data);
+    // if (data.userLoginId == null) {
+    //      openCustomAlert(data.message);
+    //     console.log(data);
+    // } else {
+        // showToast("User Login SucessFull!!");
+        // openCustomAlert("WelCome" +data.type);
+        currUserID = data.uuid;
+        console.log(currUserID);
+        cuuid = JSON.parse(localStorage.getItem('uuid'));
+        cuuid = currUserID;
+        localStorage.setItem('uuid', JSON.stringify(cuuid));
+        alert("Welcome " + data.type);
+        window.location.href = "./index.html";
+        console.log(data);
+        // }
+        //change page location from here after ssucessfull signup
+        
+    })
+    .catch(error => {
+        // console.error('Error posting data:', error);
+});
+}
+function loginAdmin(obj){
+ let url="http://localhost:8088/admin/login";
+>>>>>>> 1065953bda4f29a54e0f1348c3463088c798d6c0:User-Side/scripts/login.js
 
 function loginAdmin(obj) {
     let url = "http://localhost:8088/admin/login";

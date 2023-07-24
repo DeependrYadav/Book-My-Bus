@@ -6,13 +6,23 @@
   <!-- Css from FontAwesome for Amenities -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Website External Css Link -->
-  <link rel="stylesheet" href="./styles/styles.css">
+  <link rel="stylesheet" href="./styles/index.css">
   <!-- Css For Footer -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
-  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" href="./styles/headerFooter.css">
+  <!-- <link rel="stylesheet" href="./styles/login.css"> -->
   <title>Home -Book My Bus</title>
 </head>
 <body>
+     <!-- The custom alert dialog -->
+     <div class="custom-alert" id="customAlert">
+      <div class="custom-alert-content">
+          <p id="customAlertMessage"></p>
+          <button onclick="closeCustomAlert()">OK</button>
+      </div>
+  </div>
+
+  <div id="customToastContainer"></div>
 
   <div class="navbar">
     <div class="logo">
@@ -28,13 +38,15 @@
             <li><a href="./bookTicket.html">Find Bus</a></li>
             <li><a href="./ticketStatus.html">Ticket Status</a></li>
             <li><a href="./cancelTicket.html">Cancel Ticket</a></li>
+            <li><a href="../User-Side/feedback.html">Add Feedback</a></li>
           </ul>
         </li>
         <li><a href="./about.html">About</a></li>
         <li><a href="./contact.html">Contact</a></li>
         <li id="profileImg"><img src="./images/images.jpeg" alt=""></li>
-        <li><a href="../LoginSignupPage/login.html" id="account">Account</a></li>
-        <li id="logout"><a href="" style="border-radius: 5px; padding: 4px; background-color: #0E9E4D;color: white;" onclick="logoutUser()">Logout</a></li>
+        <li><a  href="../LoginSignupPage/login.html" id="account">Account</a></li>
+        <li id="logout"><div href="" style="border-radius: 5px; padding: 4px; background-color: #0E9E4D;color: white; cursor: pointer;" onclick="logoutUser()"
+          >Logout</div></li>
       </ul>
     </div>
     <div class="hamburger" id="hamburger">
@@ -147,6 +159,7 @@
   <!-- End of Foote  -->
 
   <!-- Java Script -->
+  <script type="text/javascript" src="./scripts/headerFooter.js" ></script>
   <script type="text/javascript" src="./scripts/index.js" ></script>
 </body>
 </html>

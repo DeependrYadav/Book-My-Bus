@@ -256,9 +256,14 @@ public class ReservationServiceImpl implements ReservationService {
 		if (find != null) {
 			Integer userId = find.getUserId();
 			User user = uRepo.findById(userId).orElseThrow(() -> new UserException("You are Not LogggedIn!!"));
-			Bus bus = user.getReservation().getBus();
-			Integer busId = bus.getBusId();
-			return busId;
+			Reservation reservation = user.getReservation();
+			if (reservation==null) {
+				throw new UserException("Please Book Some ticket First!!");
+			}else {
+				Bus bus = reservation.getBus();
+				Integer busId = bus.getBusId();
+				return busId;
+			}
 		} else {
 			throw new UserException("Please Login First!!");
 		}

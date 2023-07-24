@@ -1,9 +1,8 @@
 const search_ticket_button = document.getElementById('search-ticket-button');
 
-// const currUserId = JSON.parse(localStorage.getItem('currUserSession'));
-const currUserId = "UUUjDd";
+const currUserId = JSON.parse(localStorage.getItem('uuid'));
 if(currUserId == null){
-    alert("Please Login to Check Ticket status...!");
+    alert("Please Login to Cancel Ticket...!");
     window.location.href="./login.html";
 }
 
