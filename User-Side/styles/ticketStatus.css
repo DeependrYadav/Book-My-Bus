@@ -38,7 +38,7 @@ input::placeholder {
     font-size: 18px;
 }
 #search-ticket-button:hover{
-    background-color: #2dc770;
+    background-color: #0B7841;
 }
 
 .ticket-details{
@@ -57,7 +57,7 @@ table {
     padding: 10px;
     box-shadow: 0px 3px 8px rgba(14, 158, 77, 0.24);
     border-radius: 10px;
-    background-color: #2dc770;
+    background-color: #0B7841;
     font-size: 18px;
     font-weight: bold;
 }

@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Website External Css Link -->
   <link rel="stylesheet" href="./styles/headerFooter.css">
-  <link rel="stylesheet" href="./styles/ticketStatus.css">
+  <link rel="stylesheet" href="./styles/bookTicket.css">
   <title>Home -Book My Bus</title>
 </head>
 <body>
@@ -41,18 +41,20 @@
   </div>
   <!-- Navbar Ends -->
 
-  <!-- Ticket Status -->
-  <div class="cancel-ticket-container">
-    <div class="ticket-search-container">
-        <div class="search-ticket">
-            <input type="text" id="search-ticket-id" placeholder="Please Enter Your Ticket Id Here...">
-        </div>
-        <div class="search-button">
-            <button id="search-ticket-button">Cancel Ticket</button>
-        </div>
+<div class="book-ticket-search-container">
+    <form action="" id="search-ticket-form">
+        <input type="text" placeholder="From City" required>
+        <input type="text" placeholder="To City" required>
+        <input type="date" id="departue-date" min="" required>
+        <input type="submit" value="Find Bus">
+    </form>
+</div>
+
+<div class="book-ticket-display-container">
+    <h2 id="book-heading">Please select your route and journey date to find bus.</h2>
+    <div id="fetched-bus-container">
     </div>
-  </div>
-  
+</div>
 
 
 
@@ -122,8 +124,7 @@
 
 
   <!-- Java Script -->
+  <script type="text/javascript" src="./scripts/bookTicket.js"></script>
   <script type="text/javascript" src="./scripts/headerFooter.js"></script>
-  <script type="text/javascript" src="./scripts/cancelTicket.js"></script>
-  
 </body>
 </html>

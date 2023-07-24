@@ -1,4 +1,14 @@
+let currUserID = JSON.parse(localStorage.getItem('uuid'));
+
+if(currUserID == undefined){
+    currUserID = null;
+}
+
+localStorage.setItem('uuid', JSON.stringify(currUserID));
+
 //custome alert
+
+
 function openCustomAlert(message) {
     const customAlert = document.getElementById('customAlert');
     const customAlertMessage = document.getElementById('customAlertMessage');
@@ -54,7 +64,7 @@ function sign_in() {
 
 
 function loginUser(obj){
- let url="http://localhost:8080/user/login";
+ let url="http://localhost:8088/user/login";
 
  fetch(url, {
     method: 'POST',
@@ -65,13 +75,20 @@ function loginUser(obj){
 })
 .then(response => response.json())
 .then(data => {
+    console.log(data);
     // if (data.userLoginId == null) {
     //      openCustomAlert(data.message);
     //     console.log(data);
     // } else {
         // showToast("User Login SucessFull!!");
         // openCustomAlert("WelCome" +data.type);
-        localStorage.setItem("uuid",json.stringify(data.key));
+        currUserID = data.uuid;
+        console.log(currUserID);
+        cuuid = JSON.parse(localStorage.getItem('uuid'));
+        cuuid = currUserID;
+        localStorage.setItem('uuid', JSON.stringify(cuuid));
+        alert("Welcome " + data.type);
+        window.location.href = "./index.html";
         console.log(data);
         // }
         //change page location from here after ssucessfull signup
@@ -82,7 +99,7 @@ function loginUser(obj){
 });
 }
 function loginAdmin(obj){
- let url="http://localhost:8080/admin/login";
+ let url="http://localhost:8088/admin/login";
 
  fetch(url, {
     method: 'POST',

@@ -5,8 +5,7 @@ const download_ticket_button = document.getElementById('download-ticket-button')
 const cancel_ticket_button = document.getElementById('cancel-ticket-button');
 var fetchedDataId = null;
 
- // const currUserId = JSON.parse(localStorage.getItem('currUserSession'));
- const currUserId = "UUUjDd";
+ const currUserId = JSON.parse(localStorage.getItem('uuid'));
  if(currUserId == null){
      alert("Please Login to Check Ticket status...!");
      window.location.href="./login.html";
@@ -26,19 +25,17 @@ function fetchAndDisplayTicket(searchId) {
             return response.json();
         })
         .then(data => {
+            console.log(data);
             fetchedDataId = data.reservationId;
             ticket_tabel.style.visibility = "visible";
             ticket_cancel_buttons.style.visibility = "visible";
             document.getElementById('ticketId').textContent = data.reservationId;
-            document.getElementById('name').textContent = data.name;
-            document.getElementById('gender').textContent = data.gender ? data.gender : "NA";
+            document.getElementById('departure-time').textContent = data.bus.departureTime + " IST";
             document.getElementById('busName').textContent = data.bus.busName;
             document.getElementById('source').textContent = data.source;
             document.getElementById('destination').textContent = data.destination;
             document.getElementById('reservationDate').textContent = data.reservationDate;
-            document.getElementById('reservationTime').textContent = data.reservationTime;
             document.getElementById('ticketStatus').textContent = data.reservationStatus;
-            document.getElementById('seatNo').textContent = data.seatNo;
         })
         .catch(error => {
             alert("Dear Customer Please Enter Correct Ticket Id");
@@ -75,3 +72,4 @@ function cancelTicket(){
 }
 
 cancel_ticket_button.addEventListener('click', cancelTicket);
+
