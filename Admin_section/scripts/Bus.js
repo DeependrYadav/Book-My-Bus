@@ -1,43 +1,18 @@
 let Tbody = document.getElementById("Tbody");
- let alldata=[
-    {
-        "id": 1,
-        "BusName": "Bus 1",
-        "DriverName": "Driver 1",
-        "BusType": "Type A",
-        "RouteFrom": "City A",
-        "RouteTo": "City B",
-        "ArrivalTime": "08:00 AM",
-        "DepartureTime": "09:30 AM",
-        "Seats": 50,
-        "AvailableSeats": 10,
-     
-      },
-      {
-        "id": 2,
-        "BusName": "Bus 2",
-        "DriverName": "Driver 2",
-        "BusType": "Type B",
-        "RouteFrom": "City B",
-        "RouteTo": "City C",
-        "ArrivalTime": "10:00 AM",
-        "DepartureTime": "12:00 PM",
-        "Seats": 40,
-        "AvailableSeats": 20,
-       
-      
-
- }]
+ 
+//let uuid=localStorage.getItem("uuid") || "";
+let uuid="wt0Ob5";
+let baseURL = `http://localhost:8080`;
 getProduct()
 function getProduct(){
-    fetch("https://fashionhub-mrc2.onrender.com/AllProducts")
+    fetch(`${baseURL}/Bus/viewAllBus?key=${uuid}`)
     .then((Response)=>{
         return Response.json()
     })
     .then((data)=>{
-        console.log(alldata);
+        console.log(data);
         //console.log(data);
-        showData(alldata)
+        showData(data)
     })
 }
 
@@ -45,7 +20,7 @@ function getProduct(){
 
 function showData(data){
     Tbody.innerHTML = null;
-    let htmlData = data.map((el)=>getCard(el.id,el.BusName,el.DriverName,el.BusType,el.RouteFrom,el.RouteTo,el.ArrivalTime,el.DepartureTime,el.Seats,el.AvailableSeats))
+    let htmlData = data.map((el)=>getCard(el.busId,el.busName,el.driverName,el.busType,el.routeFrom,el.routeTo,el.arrivalTime,el.departureTime,el.seats,el.availabeSeats))
     Tbody.innerHTML = htmlData.join(" ");
     
     let tr = document.getElementsByClassName("edit");
@@ -54,7 +29,7 @@ function showData(data){
     for(let k of tr){
         k.addEventListener("click",(e)=>{
             let rowId = e.target.dataset.id;
-
+           
             toggleBilling(rowId,e.target)
         })
     }
@@ -71,13 +46,13 @@ function showData(data){
 function toggleBilling(rowId,element) {
     // Select the billing text fields
     const billingItems = document.querySelectorAll(`#ID${rowId} input[type="text"]`);
-    
+    console.log(billingItems);
     let obj= {}
     // Toggle the billing text fields
     billingItems.forEach((item) => {
         item.disabled = !item.disabled;
         let el = item.getAttribute("id")
-        
+        console.log(el);
         if(!item.disabled){
             element.innerText = "Save"
             item.style.border ="1px solid black"  
@@ -100,9 +75,11 @@ function toggleBilling(rowId,element) {
   }
 
  function updateData(obj,id){
-    console.log(obj)
-    fetch(`https://fashionhub-mrc2.onrender.com/AllProducts/${id}`,{
-        method : "PATCH",
+      let busId="busId";
+    if(obj[busId] == undefined)obj[busId] = id;
+    console.log(obj);
+    fetch(`${baseURL}/Bus/update?key=${uuid}`,{
+        method : "PUT",
         headers: {
           "Content-Type": "application/json",
         },
@@ -114,7 +91,7 @@ function toggleBilling(rowId,element) {
   }
 
   function deleteProduct(id){
-    fetch(`https://fashionhub-mrc2.onrender.com/AllProducts/${id}`,{
+    fetch(`${baseURL}/Bus/delete/${id}?key=${uuid}`,{
         method : "DELETE"
     })
     setTimeout(()=>{
@@ -132,16 +109,16 @@ function getCard(id,BusName,DriverName,BusType,RouteFrom,RouteTo,ArrivalTime,Dep
     <tr id=ID${id}>
         <td>${id}</td>
         
-        <td><input type="text" id="title" value="${BusName}"  disabled></td>
+        <td><input type="text" id="BusName" value="${BusName}"  disabled></td>
     
-        <td><input type="text" id="rating" value=${DriverName}  disabled></td>
-        <td><input type="text" id="price" value=${BusType}  disabled></td>
-        <td><input type="text" id="rating" value=${RouteFrom}  disabled></td>
-        <td><input type="text" id="rating" value=${RouteTo}  disabled></td>
-        <td><input type="text" id="rating" value=${ArrivalTime}  disabled></td>
-        <td><input type="text" id="rating" value=${DepartureTime}  disabled></td>
-        <td><input type="text" id="price" value=${Seats}  disabled></td>
-        <td><input type="text" id="price" value=${AvailableSeats}  disabled></td>
+        <td><input type="text" id="DriverName" value=${DriverName}  disabled></td>
+        <td><input type="text" id="BusType" value=${BusType}  disabled></td>
+        <td><input type="text" id="RouteFrom" value=${RouteFrom}  disabled></td>
+        <td><input type="text" id="RouteTo" value=${RouteTo}  disabled></td>
+        <td><input type="text" id="ArrivalTime" value=${ArrivalTime}  disabled></td>
+        <td><input type="text" id="DepartureTime" value=${DepartureTime}  disabled></td>
+        <td><input type="text" id="Seats" value=${Seats}  disabled></td>
+        <td><input type="text" id="AvailableSeats" value=${AvailableSeats}  disabled></td>
         <td><img class = "bus-photo" src=${imgURL} alt=""></td>
         <td class="edit" data-id=${id} >Edit</td>
         <td class="delete" data-id=${id}>Delete</td>

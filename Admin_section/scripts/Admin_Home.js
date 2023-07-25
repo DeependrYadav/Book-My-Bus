@@ -1,12 +1,13 @@
-
-let baseURL = "";
-let buses = 50;
-let users = 10;
-let routes = 30;
-
-fetchData("AllBus")
-fetchData("users")
-fetchData("routes")
+//let uuid=localStorage.getItem("uuid") || "";
+let uuid="wt0Ob5";
+let baseURL = `http://localhost:8080`;
+let buses = 0;
+let users = 0;
+let routes =0;
+let resid=document.getElementById("res-id");
+fetchData("Bus/viewAllBus")
+fetchData("user/viewall")
+fetchData("route/viewall")
 setTimeout(() => {
     console.log(buses)
     showGraph()
@@ -14,13 +15,14 @@ setTimeout(() => {
 
 function fetchData(Query) {
    
-    fetch(`${baseURL}/${Query}`)
+    fetch(`${baseURL}/${Query}?key=${uuid}`)
         .then((Response) => {
             return Response.json()
         })
         .then((data) => {
             console.log(data);
-            Query == "AllBuses" ? buses = data.length :Query == "users" ? users = data.length :routes = data.length ;
+            
+            Query == "Bus/viewAllBus" ? buses = data.length :Query == "user/viewall" ? users = data.length :routes = data.length ;
             
         })
 
@@ -91,3 +93,14 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
+function showResvereation(){
+   fetch(`${baseURL}/reservation/viewall?key=${uuid}`)
+   .then((Response) => {
+    return Response.json()
+})
+.then((data) => {
+    console.log(data);
+    let cal=(data.length*100)/500;
+    resid=cal+"%";
+}
+)}

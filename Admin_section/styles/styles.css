@@ -73,6 +73,10 @@
 .card-text {
   font-size: 14px;
 }
+.active{
+  background-color: #3C0B26;
+  color: white;
+}
 
 .month_Chart {
   margin-top: 30px;

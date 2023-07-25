@@ -33,7 +33,7 @@
         </div>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link active" href="./Admin_Home.html">Dashboard</a>
+                <a class="nav-link " href="./Admin_Home.html">Dashboard</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./Admin_User_Deatils.html">Users</a>
@@ -45,7 +45,7 @@
                 <a class="nav-link" href="./AddBus.html">Add New Buses</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./route.html">Routes</a>
+                <a class="nav-link active" href="./route.html">Routes</a>
               </li>
               <li class="nav-item">
                 <a id="logout" class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
@@ -70,16 +70,16 @@
             <label for="distance">Distance (in km)</label>
             <input type="number" id="distance" name="distance" class="form-control" required>
           </div>
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label for="busList">Buses on Route</label>
             <select id="busList" name="busList[]" class="form-control" multiple required>
-              <!-- Add options for buses dynamically using JavaScript or server-side data -->
+              Add options for buses dynamically using JavaScript or server-side data -->
               <!-- Example: -->
               <!-- <option value="busId1">Bus 1</option> -->
               <!-- <option value="busId2">Bus 2</option> -->
-            </select>
-          </div>
-          <button type="submit" class="btn btn-primary">Add Route</button>
+            <!-- </select>
+          </div> -->
+          <button type="submit" class="btn btn-primary" id="addroute" onsubmit="">Add Route</button>
         </form>
       </div>
     </div>

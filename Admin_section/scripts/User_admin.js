@@ -1,5 +1,7 @@
+let uuid="wt0Ob5";
+let baseURL = `http://localhost:8080`;
 async function getData() {
-    let res=await fetch("https://fashionhub-mrc2.onrender.com/users");
+    let res=await fetch(`${baseURL}/user/viewall?key=${uuid}`);
     let data=await res.json();
   
     display(data)
@@ -29,23 +31,23 @@ function   display(data){
        c2.append(image)
          
         let c3=document.createElement("td");
-          c3.innerText=elem.name;
+          c3.innerText=elem.firstName+" "+elem.lastName;
 
         let c4=document.createElement("td");
            c4.innerText=elem.email;
         let c5=document.createElement("td");
-         c5.innerText=elem.gender;
+         c5.innerText="female";
          let c6=document.createElement("td");
-           c6.innerText=elem.Phone;
+           c6.innerText=elem.contact;
            let c7=document.createElement("td");
-            c7.innerText=elem.zipcode;
+            c7.innerText=elem.reservation;
             
             let c8=document.createElement("td");
                 c8.innerHTML=`<button class="d-button">DELETE</button>`
                 row.append(c1,c2,c3,c4,c5,c6,c7,c8)
                 show.append(row);
                 c8.addEventListener("click",()=>{
-                  deleteData(elem.id)
+                  deleteData(elem.busId)
                   row.style.display="none";
                  
                 })
@@ -54,7 +56,7 @@ function   display(data){
     })
 }
 async function  deleteData(id){
-    let res=await fetch(`https://fashionhub-mrc2.onrender.com/users/${id}`,{
+    let res=await fetch(`${baseURL}/user/delete/${id}?key=${uuid}`,{
       method: 'DELETE',
       headers: {
         'Content-type': 'application/json'
