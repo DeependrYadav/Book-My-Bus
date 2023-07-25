@@ -6,6 +6,7 @@ import java.util.List;
 import com.masai.exception.BusException;
 import com.masai.exception.ReservationException;
 import com.masai.exception.UserException;
+import com.masai.model.Bus;
 import com.masai.model.Reservation;
 
 public interface ReservationService {
@@ -22,5 +23,5 @@ public interface ReservationService {
 	
 	
 	public List<Reservation> getAllReservationByDate(LocalDate date,String key)throws ReservationException, UserException;
-	
+	Integer getCurrentUserReservedBusId() throws UserException;
 }

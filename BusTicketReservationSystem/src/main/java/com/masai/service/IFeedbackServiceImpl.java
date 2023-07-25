@@ -33,10 +33,10 @@ public class IFeedbackServiceImpl implements IFeedbackService{
 	private SessionRepo srepo;
 	
 	@Override
-	public Feedback addFeedback( Integer busId, Feedback feedback,String key) throws FeedbackException, UserException, BusException {
+	public String addFeedback( Integer busId, Feedback feedback,String key) throws FeedbackException, UserException, BusException {
 		CurrentUserSession loggedInUser=srepo.findByUuid(key);
 		if(loggedInUser==null) {
-			throw new UserException("Please provide a valid key to update user");
+			throw new UserException("Please provide a valid key to add Feedback");
 		}
 		User user = udao.findById(loggedInUser.getUserId()).orElseThrow(() -> new UserException("User with Id " + loggedInUser.getUserId() + " not found"));
 		if(user.getUserLoginId()==loggedInUser.getUserId()) {
@@ -47,7 +47,7 @@ public class IFeedbackServiceImpl implements IFeedbackService{
 			
 			Feedback f = fdao.save(feedback);
 			
-			return f;
+			return "Feedback Added SucessFully";
 		}else throw new UserException("Invalid User Id");
 		
 		

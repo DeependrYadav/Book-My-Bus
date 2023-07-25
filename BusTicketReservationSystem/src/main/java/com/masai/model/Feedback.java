@@ -21,7 +21,6 @@ import lombok.ToString;
 
 @Entity
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 @ToString
 public class Feedback {
@@ -46,7 +45,7 @@ public class Feedback {
 	
 	@JsonFormat(pattern = "yyyy-MM-dd", shape = Shape.STRING)
 	@PastOrPresent(message = "Date should be current date or past date")
-	private LocalDate feedbackDate;
+	private LocalDate feedbackDate = LocalDate.now();
 	
 	@JsonIgnore
 	@OneToOne
@@ -55,5 +54,19 @@ public class Feedback {
 	@JsonIgnore
 	@OneToOne
 	private Bus bus;
+
+	public Feedback(
+			@Min(value = 1, message = "Rating should be between 1 to 10") @Max(value = 10, message = "Rating should be between 1 to 10") Integer driverRating,
+			@Min(value = 1, message = "Rating should be between 1 to 10") @Max(value = 10, message = "Rating should be between 1 to 10") Integer serviceRating,
+			@Min(value = 1, message = "Rating should be between 1 to 10") @Max(value = 10, message = "Rating should be between 1 to 10") Integer overallRating,
+			String comments) {
+		super();
+		this.driverRating = driverRating;
+		this.serviceRating = serviceRating;
+		this.overallRating = overallRating;
+		this.comments = comments;
+	}
+	
+	
 	
 }

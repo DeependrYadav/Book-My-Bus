@@ -21,12 +21,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.masai.exception.BusException;
 import com.masai.exception.ReservationException;
 import com.masai.exception.UserException;
+import com.masai.model.Bus;
 import com.masai.model.Reservation;
 import com.masai.service.ReservationService;
 
 import jakarta.validation.Valid;
 
-//import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
 @CrossOrigin("*")
@@ -40,7 +40,6 @@ public class ReservationController {
 	
 	@PostMapping("/add/{busId}")
 	public ResponseEntity<Reservation> addNewReservationHandler(@PathVariable Integer busId,@Valid  @RequestBody Reservation reservation,@RequestParam String key) throws ReservationException, BusException, UserException{
-		
 		Reservation saveReservation = rService.addNewReservation(busId ,reservation,key);
 		
 		return new ResponseEntity<Reservation>(saveReservation, HttpStatus.CREATED);
@@ -103,7 +102,6 @@ public class ReservationController {
 		return new ResponseEntity<List<Reservation>>(reservation, HttpStatus.OK);
 		
 	}
-	
 	
 	
 	
