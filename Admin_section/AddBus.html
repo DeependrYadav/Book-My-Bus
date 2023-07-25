@@ -58,7 +58,7 @@
       <div class="col-md-9 content">
         <h1 class="sticky-header">Add New Bus</h1>
 
-        <form id="addNewBusForm" class="custom-form" onsubmit="return validateForm()">
+        <form id="addNewBusForm" class="custom-form">
           <div class="form-group">
             <label for="busname">Bus Name</label>
             <input type="text" id="busname" name="busname" class="form-control" required>
@@ -98,7 +98,7 @@
             <label for="availableSeats">Available Seats</label>
             <input type="number" id="availableSeats" name="availableSeats" class="form-control" required>
           </div>
-          <button type="submit" class="btn btn-primary">Add Bus</button>
+          <button type="submit" id="add-bus" class="btn btn-primary">Add Bus</button>
         </form>
       </div>
     </div>
@@ -107,6 +107,7 @@
   <!-- Include Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-  <script src="scripts/Admin_Home.js"></script>
+  <script src="scripts/AddBus.js"></script>
+
 </body>
 </html>
