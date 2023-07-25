@@ -21,20 +21,11 @@ function closeCustomAlert() {
 
 function toggleStickyNavbar() {
   if (window.scrollY > navbar.offsetTop) {
-    navbar.classList.add('sticky');
-    moving_bus.classList.add('moving-bus-sticky');
+  moving_bus.classList.add('moving-bus-sticky');
   } else {
-    navbar.classList.remove('sticky');
-    moving_bus.classList.remove('moving-bus-sticky');
+  moving_bus.classList.remove('moving-bus-sticky');
   }
 }
-
-// Listen for scroll events and apply the sticky class accordingly
-//   moving_bus.classList.add('moving-bus-sticky');
-//   } else {
-//   moving_bus.classList.remove('moving-bus-sticky');
-//   }
-// }
 
 
 window.addEventListener('scroll', toggleStickyNavbar);
