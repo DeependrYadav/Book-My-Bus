@@ -1,0 +1,45 @@
+{
+	"folders": {},
+	"connections": {
+		"mysql8-1898136b92c-deb6c4bbba25bcb": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "masaidb",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "masaidb",
+				"url": "jdbc:mysql://localhost:3306/masaidb",
+				"configurationType": "MANUAL",
+				"home": "C:\\Program Files\\MySQL\\MySQL Server 8.0",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		}
+	},
+	"virtual-models": {
+		"mysql8-1898136b92c-deb6c4bbba25bcb": {
+			"masaidb": {
+				"@properties": {
+					"erd.diagram.state": {
+						"serialized": "<diagram version=\"1\" name=\"empty\" time=\"202307231103\"><entities><data-source id=\"mysql8-1898136b92c-deb6c4bbba25bcb\"><entity id=\"1\" name=\"bus\" fq-name=\"masaidb.bus\" order=\"0\" x=\"590\" y=\"90\"><path name=\"masaidb\"/></entity><entity id=\"2\" name=\"bus_seq\" fq-name=\"masaidb.bus_seq\" order=\"1\" x=\"604\" y=\"18\"><path name=\"masaidb\"/></entity><entity id=\"3\" name=\"current_user_session\" fq-name=\"masaidb.current_user_session\" order=\"2\" x=\"192\" y=\"341\"><path name=\"masaidb\"/></entity><entity id=\"4\" name=\"feedback\" fq-name=\"masaidb.feedback\" order=\"3\" x=\"22\" y=\"133\"><path name=\"masaidb\"/></entity><entity id=\"5\" name=\"feedback_seq\" fq-name=\"masaidb.feedback_seq\" order=\"4\" x=\"36\" y=\"69\"><path name=\"masaidb\"/></entity><entity id=\"6\" name=\"reservation\" fq-name=\"masaidb.reservation\" order=\"5\" x=\"405\" y=\"76\"><path name=\"masaidb\"/></entity><entity id=\"7\" name=\"reservation_seq\" fq-name=\"masaidb.reservation_seq\" order=\"6\" x=\"422\" y=\"9\"><path name=\"masaidb\"/></entity><entity id=\"8\" name=\"route\" fq-name=\"masaidb.route\" order=\"7\" x=\"408\" y=\"331\"><path name=\"masaidb\"/></entity><entity id=\"9\" name=\"route_seq\" fq-name=\"masaidb.route_seq\" order=\"8\" x=\"495\" y=\"392\"><path name=\"masaidb\"/></entity><entity id=\"10\" name=\"user\" fq-name=\"masaidb.`user`\" order=\"9\" x=\"198\" y=\"77\"><path name=\"masaidb\"/></entity><entity id=\"11\" name=\"user_seq\" fq-name=\"masaidb.user_seq\" order=\"10\" x=\"243\" y=\"8\"><path name=\"masaidb\"/></entity></data-source></entities><relations><relation name=\"FKnsyckbsa0g31fueyt4lyr7as9\" fq-name=\"masaidb.feedback.FKnsyckbsa0g31fueyt4lyr7as9\" type=\"fk\" pk-ref=\"1\" fk-ref=\"4\"><bend type=\"abs\" x=\"146\" y=\"291\"/></relation><relation name=\"FK1cwae71jt1ek8y0yhcdshjuta\" fq-name=\"masaidb.reservation.FK1cwae71jt1ek8y0yhcdshjuta\" type=\"fk\" pk-ref=\"1\" fk-ref=\"6\"/><relation name=\"FK2ngkxieol1mq09cdbvpum6ys8\" fq-name=\"masaidb.`user`.FK2ngkxieol1mq09cdbvpum6ys8\" type=\"fk\" pk-ref=\"6\" fk-ref=\"10\"/><relation name=\"FK34202857f4x6hu34lxlbh7y69\" fq-name=\"masaidb.bus.FK34202857f4x6hu34lxlbh7y69\" type=\"fk\" pk-ref=\"8\" fk-ref=\"1\"/><relation name=\"FK3cscao38988bj2d3glpvn2c0t\" fq-name=\"masaidb.feedback.FK3cscao38988bj2d3glpvn2c0t\" type=\"fk\" pk-ref=\"10\" fk-ref=\"4\"/></relations></diagram>"
+					}
+				}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}
