@@ -1,9 +1,10 @@
 let formdata=document.querySelectorAll("#addNewBusForm");
 console.log(formdata);
 let i=0;
-//let uuid=localStorage.getItem("uuid") || "";
-let uuid="wt0Ob5";
-let baseURL = `http://localhost:8080`;
+
+let uuid=JSON.parse(localStorage.getItem("uuid")) || "";
+let baseURL = `http://localhost:8088`;
+
 // Add an event listener to the form
 document.getElementById("addNewBusForm").addEventListener("submit", function (event) {
      // Prevent the default form submission

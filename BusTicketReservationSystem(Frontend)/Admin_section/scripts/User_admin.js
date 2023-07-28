@@ -1,5 +1,7 @@
-let uuid="wt0Ob5";
-let baseURL = `http://localhost:8080`;
+let uuid=JSON.parse(localStorage.getItem("uuid")) || "";
+
+let baseURL = `http://localhost:8088`;
+
 async function getData() {
     let res=await fetch(`${baseURL}/user/viewall?key=${uuid}`);
     let data=await res.json();

@@ -78,16 +78,16 @@ function loginUser(obj) {
         .then(data => {
             // console.log(data);
             if (data.userId== null) {
-                console.log("If",data);
-                openCustomAlert("Invalid Credantials");
+                openCustomAlert(data.message);
             } else {
                 showToast("User Login SucessFull!!");
-                console.log(data);
+                
                 openCustomAlert("WelCome " + data.type);
+                
                 localStorage.setItem("uuid", JSON.stringify(data.uuid));
                 localStorage.setItem("username", JSON.stringify(data.type));
-                console.log("else"+data);
-               window.location.href="../User-Side/index.html";
+                
+               window.location.href="../index.html";
                 //change page location from here after ssucessfull signup
             }
 

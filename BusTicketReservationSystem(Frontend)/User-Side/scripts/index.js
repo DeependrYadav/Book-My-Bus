@@ -10,8 +10,8 @@ function openCustomAlert(message) {
   customAlert.style.display = 'block';
   setTimeout(() => {
       closeCustomAlert();
-      window.location.href="../User-Side/index.html";
-  }, 5000)
+      window.location.href="../index.html";
+  }, 3000)
 }
 
 function closeCustomAlert() {

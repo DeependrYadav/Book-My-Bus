@@ -1,8 +1,9 @@
 let Tbody = document.getElementById("Tbody");
  
-//let uuid=localStorage.getItem("uuid") || "";
-let uuid="wt0Ob5";
-let baseURL = `http://localhost:8080`;
+let uuid=JSON.parse(localStorage.getItem("uuid")) || "";
+// let uuid="wt0Ob5";
+console.log(uuid);
+let baseURL = `http://localhost:8088`;
 getProduct()
 function getProduct(){
     fetch(`${baseURL}/Bus/viewAllBus?key=${uuid}`)
