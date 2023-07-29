@@ -86,12 +86,30 @@ document.addEventListener("DOMContentLoaded", function () {
             confirmButtonColor: "#3085d6",
           }).then(() => {
             // Redirect to the login page or any other designated page for logging out
-            window.location.href = "login.html"; // Replace "login.html" with the actual logout page URL
+            let url = `http://localhost:8088/user/logout?key=${uuid}`;
+            console.log(uuid);
+            fetch(url, {
+                method: 'POST'
+              })
+              .then(response => response)
+              .then(data => {
+                // openCustomAlert("User LogOut SucessFull!!");
+                localStorage.setItem("username", JSON.stringify(""));
+                localStorage.setItem("uuid", JSON.stringify(""));
+              
+                console.log(data);
+              })
+              .catch(error => {
+                console.error('Error posting data:', error);
+              });
+            window.location.href = "../index.html"; // Replace "login.html" with the actual logout page URL
           });
         }
       });
     });
   });
+
+  
 function showResvereation(){
    fetch(`${baseURL}/reservation/viewall?key=${uuid}`)
    .then((Response) => {
