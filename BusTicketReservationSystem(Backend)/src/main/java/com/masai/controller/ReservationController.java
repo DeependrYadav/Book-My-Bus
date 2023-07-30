@@ -40,6 +40,7 @@ public class ReservationController {
 	
 	@PostMapping("/add/{busId}")
 	public ResponseEntity<Reservation> addNewReservationHandler(@PathVariable Integer busId,@Valid  @RequestBody Reservation reservation,@RequestParam String key) throws ReservationException, BusException, UserException{
+		System.out.println(reservation);
 		Reservation saveReservation = rService.addNewReservation(busId ,reservation,key);
 		
 		return new ResponseEntity<Reservation>(saveReservation, HttpStatus.CREATED);

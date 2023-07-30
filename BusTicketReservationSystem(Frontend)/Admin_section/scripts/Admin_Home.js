@@ -27,11 +27,6 @@ function fetchData(Query) {
 
 }
 
-
-
-
-
-
 function showGraph() {
     google.charts.load('current', { 'packages': ['corechart'] });
     google.charts.setOnLoadCallback(drawChart);
@@ -86,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
             confirmButtonColor: "#3085d6",
           }).then(() => {
             // Redirect to the login page or any other designated page for logging out
-            let url = `http://localhost:8088/user/logout?key=${uuid}`;
+            let url = `http://localhost:8088/admin/logout?key=${uuid}`;
             console.log(uuid);
             fetch(url, {
                 method: 'POST'
