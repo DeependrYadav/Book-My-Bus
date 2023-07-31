@@ -41,19 +41,19 @@ public class UserController {
 		User u=uService.updateUser(user,key);
 		return new ResponseEntity<User>(u,HttpStatus.ACCEPTED);
 	}
-	
+
 	@DeleteMapping("delete/{userId}")
 	public ResponseEntity<User> deleteUserHandler(@PathVariable("userId") Integer userId,@RequestParam String key) throws UserException {
 		User u=uService.deleteUser(userId, key);
 		return new ResponseEntity<User>(u,HttpStatus.ACCEPTED);
 	}
-	
+
 	@GetMapping("/view/{userId}")
 	public ResponseEntity<User> viewUserHandler(@PathVariable("userId") Integer userId,@RequestParam String key) throws UserException {
 		User u=uService.viewUser(userId,key);
 		return new ResponseEntity<User>(u,HttpStatus.FOUND);
 	}
-	
+
 	@GetMapping("/viewall")
 	public ResponseEntity<List<User>> viewAllUsersHandler(@RequestParam String key) throws UserException {
 		List<User> users=uService.viewAllUsers(key);
