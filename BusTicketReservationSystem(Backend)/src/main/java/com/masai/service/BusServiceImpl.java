@@ -42,10 +42,10 @@ public class BusServiceImpl implements BusService {
 //		if user is Admin then you are allowed to add bus
 
 		if (loggedInUser.getType().equalsIgnoreCase("Admin")) {
-
 //			finding route is present or not
-			Route route = rrepo.findByRouteFromAndRouteTo(bus.getRouteForm(), bus.getRouteTo());
-
+			Route route = rrepo.findByRouteFromAndRouteTo(bus.getRouteFrom(), bus.getRouteTo());
+			System.out.println(bus);
+			System.out.println(route);
 			if (route != null) {
 //				if contains bus with same details throw bus exception
 				if (route.getBuslist().contains(bus)) {
@@ -80,13 +80,13 @@ public class BusServiceImpl implements BusService {
 			if (opt.isPresent()) {
 				Bus curr = opt.get();
 //			if seat is not available you cannot update bus details	
-				if (curr.getAvailabeSeats() != curr.getSeats())
+				if (curr.getAvailableSeats() != curr.getSeats())
 					throw new BusException("Cannot update Bus already scheduled");
 
-				Route route = rrepo.findByRouteFromAndRouteTo(curr.getRouteForm(), curr.getRouteTo());
+				Route route = rrepo.findByRouteFromAndRouteTo(curr.getRouteFrom(), curr.getRouteTo());
 
-				if (bus.getRouteForm() != null && bus.getRouteTo() != null) {
-					route = rrepo.findByRouteFromAndRouteTo(bus.getRouteForm(), bus.getRouteTo());
+				if (bus.getRouteFrom() != null && bus.getRouteTo() != null) {
+					route = rrepo.findByRouteFromAndRouteTo(bus.getRouteFrom(), bus.getRouteTo());
 
 //		if route not found it will throw bus exception			
 					if (route == null)
@@ -94,20 +94,20 @@ public class BusServiceImpl implements BusService {
 				}
 //		setting details	
 				if (bus.getArrivalTime() != null)
-					curr.setArrivalTime(bus.getArrivalTime().toString());
+					curr.setArrivalTime(bus.getArrivalTime());
 //				curr.setArrivalTime(bus.getArrivalTime().toString());
-				if (bus.getAvailabeSeats() != null)
-					curr.setAvailabeSeats(bus.getAvailabeSeats());
+				if (bus.getAvailableSeats() != null)
+					curr.setAvailableSeats(bus.getAvailableSeats());
 				if (bus.getBusName() != null)
 					curr.setBusName(bus.getBusName());
 				if (bus.getBusType() != null)
 					curr.setBusType(bus.getBusType());
 				if (bus.getDepartureTime() != null)
-					curr.setDepartureTime(bus.getDepartureTime().toString());
+					curr.setDepartureTime(bus.getDepartureTime());
 				if (bus.getDriverName() != null)
 					curr.setDriverName(bus.getDriverName());
-				if (bus.getRouteForm() != null)
-					curr.setRouteForm(bus.getRouteForm());
+				if (bus.getRouteFrom() != null)
+					curr.setRouteFrom(bus.getRouteFrom());
 				if (bus.getRouteTo() != null)
 					curr.setRouteTo(bus.getRouteTo());
 				if (bus.getSeats() != null)
@@ -144,7 +144,7 @@ public class BusServiceImpl implements BusService {
 			if (opt.isPresent()) {
 				Bus exbus = opt.get();
 
-				if (exbus.getAvailabeSeats() != exbus.getSeats())
+				if (exbus.getAvailableSeats() != exbus.getSeats())
 					throw new BusException("Cannot delete Bus already scheduled");
 
 				busdao.delete(exbus);

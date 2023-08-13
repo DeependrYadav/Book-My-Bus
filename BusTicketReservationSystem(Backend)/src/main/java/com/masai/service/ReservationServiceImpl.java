@@ -50,14 +50,14 @@ public class ReservationServiceImpl implements ReservationService {
 
 		Bus b = bdao.findById(busId).orElseThrow(() -> new BusException("Bus with Id " + busId + " not found"));
 
-		if (!reservation.getSource().equalsIgnoreCase(b.getRouteForm())
+		if (!reservation.getSource().equalsIgnoreCase(b.getRouteFrom())
 				|| !reservation.getDestination().equalsIgnoreCase(b.getRouteTo()))
 			throw new ReservationException("Bus is not available for this route");
 
-		if (b.getAvailabeSeats() <= 0)
+		if (b.getAvailableSeats() <= 0)
 			throw new ReservationException("Seats are not available");
 
-		b.setAvailabeSeats(b.getAvailabeSeats() - 1);
+		b.setAvailableSeats(b.getAvailableSeats() - 1);
 
 		reservation.setReservationType("Online");
 		reservation.setReservationStatus("Booked");
@@ -134,7 +134,7 @@ public class ReservationServiceImpl implements ReservationService {
 			Bus b = bdao.findById(currUser.getReservation().getBus().getBusId())
 					.orElseThrow(() -> new ReservationException(
 							"Bus with Id " + currUser.getReservation().getBus().getBusId() + " not found"));
-			b.setAvailabeSeats(b.getAvailabeSeats() + 1);
+			b.setAvailableSeats(b.getAvailableSeats() + 1);
 
 			currUser.setReservation(null);
 

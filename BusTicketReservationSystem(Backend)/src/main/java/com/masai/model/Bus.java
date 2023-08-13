@@ -37,30 +37,14 @@ public class Bus {
 	
 	private Integer seats;
 	
-	private Integer availabeSeats;
+	private Integer availableSeats;
 
 	@ManyToOne
 	@JsonIgnore
 	private Route route;
 
-	public Route getRoute() {
-		return route;
-	}
-
-	public void setRoute(Route route) {
-		this.route = route;
-	}
-
-	public Bus() {
-		super();
-	}
-
 	public Integer getBusId() {
 		return busId;
-	}
-
-	public void setBusId(Integer busId) {
-		this.busId = busId;
 	}
 
 	public String getBusName() {
@@ -87,12 +71,12 @@ public class Bus {
 		this.busType = busType;
 	}
 
-	public String getRouteForm() {
+	public String getRouteFrom() {
 		return routeFrom;
 	}
 
-	public void setRouteForm(String routeForm) {
-		this.routeFrom = routeForm;
+	public void setRouteFrom(String routeFrom) {
+		this.routeFrom = routeFrom;
 	}
 
 	public String getRouteTo() {
@@ -107,18 +91,16 @@ public class Bus {
 		return arrivalTime;
 	}
 
-	public void setArrivalTime(String arrivalTime) {
-		
-		this.arrivalTime = LocalTime.parse(arrivalTime);
+	public void setArrivalTime(LocalTime arrivalTime) {
+		this.arrivalTime = arrivalTime;
 	}
 
 	public LocalTime getDepartureTime() {
 		return departureTime;
 	}
 
-	public void setDepartureTime(String departureTime) {
-		
-		this.departureTime = LocalTime.parse(departureTime);
+	public void setDepartureTime(LocalTime departureTime) {
+		this.departureTime = departureTime;
 	}
 
 	public Integer getSeats() {
@@ -129,20 +111,31 @@ public class Bus {
 		this.seats = seats;
 	}
 
-	public Integer getAvailabeSeats() {
-		return availabeSeats;
+	public Integer getAvailableSeats() {
+		return availableSeats;
 	}
 
-	public void setAvailabeSeats(Integer availabeSeats) {
-		this.availabeSeats = availabeSeats;
+	public void setAvailableSeats(Integer availableSeats) {
+		this.availableSeats = availableSeats;
+	}
+
+	public Route getRoute() {
+		return route;
+	}
+
+	public void setRoute(Route route) {
+		this.route = route;
 	}
 
 	@Override
 	public String toString() {
 		return "Bus [busId=" + busId + ", busName=" + busName + ", driverName=" + driverName + ", busType=" + busType
-				+ ", routeForm=" + routeFrom + ", routeTo=" + routeTo + ", arrivalTime=" + arrivalTime
-				+ ", departureTime=" + departureTime + ", seats=" + seats + ", availabeSeats=" + availabeSeats + "]";
+				+ ", routeFrom=" + routeFrom + ", routeTo=" + routeTo + ", arrivalTime=" + arrivalTime
+				+ ", departureTime=" + departureTime + ", seats=" + seats + ", availableSeats=" + availableSeats+"]";
 	}
+
+	
+
 	
 	
 }

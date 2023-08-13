@@ -1,5 +1,5 @@
 let formdata=document.querySelectorAll("#addNewBusForm");
-console.log(formdata);
+// console.log(formdata);
 let i=0;
 
 let uuid=JSON.parse(localStorage.getItem("uuid")) || "";
@@ -7,10 +7,9 @@ let baseURL = `http://localhost:8088`;
 
 // Add an event listener to the form
 document.getElementById("addNewBusForm").addEventListener("submit", function (event) {
-     // Prevent the default form submission
+
      event.preventDefault();
-   
-     // Get all the input elements within the form
+
      const formInputs = document.querySelectorAll("#addNewBusForm input, #addNewBusForm select");
    
      // Create an empty object to store the form data
@@ -20,6 +19,7 @@ document.getElementById("addNewBusForm").addEventListener("submit", function (ev
      formInputs.forEach(input => {
        formData[input.name] = input.value;
      })
+     console.log(formData);
      fetch(`${baseURL}/Bus/add?key=${uuid}`, {
           method: "POST",
           headers: {
@@ -27,18 +27,11 @@ document.getElementById("addNewBusForm").addEventListener("submit", function (ev
           },
           body: JSON.stringify(formData),
         })
-          .then((response) => {
-            // Check if the response is successful
-            if (!response.ok) {
-              alert("Network response was not ok");
-            }
-            // Assuming the response contains JSON data, you can parse it
-            return response.json();
-          })
+          .then(response =>response.json())
           .then((data) => {
             // Handle the response data if required
-            alert("Succefully Added");
             console.log(data);
+            alert("Succefully Added");
           })
           .catch((error) => {
             // Handle any errors that occurred during the fetch request
