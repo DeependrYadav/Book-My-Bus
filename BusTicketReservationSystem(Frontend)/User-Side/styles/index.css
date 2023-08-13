@@ -1,10 +1,23 @@
 :root {
   --main-color: #0e9e4d;
 }
+body{
+  margin: 0px;
+  padding: 0px;
+  overflow-x:hidden;
+}
 /* Css for Home Content */
+/* Apply sticky behavior to the navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 1000; /* Ensure navbar is on top */
+}
+
 
 .home-container{
-  background: url('/User-Side/images/Home_page_banner.png') repeat-x bottom;
+  background: url('../images/Home_page_banner.png') repeat-x bottom;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -14,21 +27,33 @@
   margin-top: 2px;
 }
 
-.moving-bus{
-  background: url('/User-Side/images/Bus.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  right: 0;
-  bottom: 75px; /* Add this to position the bus at the right bottom corner */
-  width: 200px;
-  height: 150px;
-  position: absolute; /* Add this to position the .moving-bus relative to .home-container */
-  animation: moveBus 12s linear infinite;
-  /* transform-origin: 100% 50%; */
+.home-container {
+  position: relative; /* Add this to establish a positioning context for the absolute-positioned bus */
 }
 
-.moving-bus-sticky{
-  bottom: 165px;
+.moving-bus {
+  background: url('../images/Bus.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 150px;
+  position: absolute;
+  bottom: -75px;
+  right: 0;
+  animation: moveBus 12s linear infinite;
+  transform-origin: bottom right; /* Adjust the transform origin for the animation*/ 
+}
+.moving-bus-sticky {
+  bottom: 70px;
+}
+
+@keyframes moveBus {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(100% + 200px)); /* Adjust this value based on the container's width */
+  }
 }
 
 .home-tagline-and-button{

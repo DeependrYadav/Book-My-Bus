@@ -19,13 +19,13 @@ function closeCustomAlert() {
   customAlert.style.display = 'none';
 }
 
-function toggleStickyNavbar() {
-  if (window.scrollY > navbar.offsetTop) {
-  moving_bus.classList.add('moving-bus-sticky');
-  } else {
-  moving_bus.classList.remove('moving-bus-sticky');
-  }
-}
+// function toggleStickyNavbar() {
+//   if (window.scrollY > navbar.offsetTop) {
+//   moving_bus.classList.add('moving-bus-sticky');
+//   } else {
+//   moving_bus.classList.remove('moving-bus-sticky');
+//   }
+// }
 
 
 window.addEventListener('scroll', toggleStickyNavbar);

@@ -62,6 +62,8 @@ function openCustomAlert(message) {
         closeCustomAlert();
         if(message=="Feedback Added Sucesssfully"||message=="Please Book Some Ticket First!!"){
             window.location.href="../User-Side/index.html";
+        }else if(message=="Please Login First"){
+            window.location.href="./login.html";
         }
     }, 3000)
 }
