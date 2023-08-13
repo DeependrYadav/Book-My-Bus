@@ -9,7 +9,7 @@ fetchData("Bus/viewAllBus")
 fetchData("user/viewall")
 fetchData("route/viewall")
 setTimeout(() => {
-    console.log(buses)
+    // console.log(buses)
     showGraph()
 }, 2000)
 
@@ -20,7 +20,7 @@ function fetchData(Query) {
             return Response.json()
         })
         .then((data) => {
-            console.log(data);
+            // console.log(data);
             
             Query == "Bus/viewAllBus" ? buses = data.length :Query == "user/viewall" ? users = data.length :routes = data.length;
         })

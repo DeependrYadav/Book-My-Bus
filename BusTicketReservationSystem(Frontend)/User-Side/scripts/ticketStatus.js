@@ -62,7 +62,7 @@ function cancelTicket(){
             if(response.ok){
                 response.json().then(data => {
                     alert("Reservation Cancelled Successfully...!");
-                    window.location.href = "./index.html";
+                    window.location.href = "../index.html";
                 })
             }else{
                 console.log(data.message);
