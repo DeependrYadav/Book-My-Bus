@@ -91,7 +91,7 @@
 ## **Bus Module** 
 *Admin can add Bus by providing neccessary details*
 </br>
-
+![Bus Module](./images.bus_controller.png)
 
 ## **Route Module**
 *Admin can add Route by providing neccessary details*
