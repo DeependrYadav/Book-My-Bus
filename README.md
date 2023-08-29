@@ -101,12 +101,12 @@
 ## **Reservation Module**
 *User can book Reservation by selecting Source and destination*
 </br>
-![Screenshot 2023-07-23 230534](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/bd23d53e-a2d3-4b31-9aea-8c61f7ef2cb6)
+![Reservation Module](./images/reservation_controller.png)
 
 ## **Feedback Module**
 *User can give feedback for bus experience*
 </br>
-![Screenshot 2023-07-23 230559](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/097301e3-a2be-4718-a538-3f6ae1537c82)
+![Feedback Module](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/097301e3-a2be-4718-a538-3f6ae1537c82)
 
 # Contributor
 
