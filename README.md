@@ -82,7 +82,7 @@
 ## **User Module**
 *Customer can signup first if not registered earlier*
 </br>
-
+![User Module](./images/user_controller.png)
 
 *Customer can login with earlier provided username and password*
 </br>
