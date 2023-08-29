@@ -106,7 +106,7 @@
 ## **Feedback Module**
 *User can give feedback for bus experience*
 </br>
-![Feedback Module](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/097301e3-a2be-4718-a538-3f6ae1537c82)
+![Feedback Module](./images/feedback_controller.png)
 
 # Contributor
 
