@@ -96,7 +96,7 @@
 ## **Route Module**
 *Admin can add Route by providing neccessary details*
 </br>
-![Screenshot 2023-07-23 230514](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/abafa311-7b93-42de-bd8f-9011bd88e8ba)
+![Route Module](./images/route_controller.png)
 
 ## **Reservation Module**
 *User can book Reservation by selecting Source and destination*
