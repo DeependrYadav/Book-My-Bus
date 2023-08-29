@@ -64,7 +64,7 @@
 ## **All Modules** 
 *All modules of our project*
 </br>
-![Screenshot 2023-07-23 231013](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/0bab30a1-8c4b-4032-b528-0532c49d4fc8)
+![All Modules](./images/all_controller.png)
 
 
 ## **Admin Home page and Module** 
