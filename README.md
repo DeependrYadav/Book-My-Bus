@@ -86,12 +86,12 @@
 
 *Customer can login with earlier provided username and password*
 </br>
-![Login](./images.login_controller.png)
+![Login](./images/login_controller.png)
 
 ## **Bus Module** 
 *Admin can add Bus by providing neccessary details*
 </br>
-![Bus Module](./images.bus_controller.png)
+![Bus Module](./images/bus_controller.png)
 
 ## **Route Module**
 *Admin can add Route by providing neccessary details*
