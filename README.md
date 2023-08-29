@@ -73,25 +73,25 @@
 ![Admin Panel](./images/admin_panel.png)
 </br>
 ### Admin Module
-![Screenshot 2023-07-23 231430](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/769f3ab9-f0c0-471f-b3bf-8b635940bdd8)
+![Admin Module](./images/admin_login.png)
 </br>
 
 ## **User landing page**
-![Screenshot 2023-07-24 005041](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/d2e58fb4-a7ed-4554-9989-7c7d9723995f)
+![User landing page](./images/landing_page.png)
 
 ## **User Module**
 *Customer can signup first if not registered earlier*
 </br>
-![Screenshot 2023-07-23 231529](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/32f62e58-51fc-4725-9bd6-90c77f853de2)
+
 
 *Customer can login with earlier provided username and password*
 </br>
-![Screenshot 2023-07-23 230424](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/da8cb5e2-616f-4294-a5c2-f55853cf28eb)
+
 
 ## **Bus Module** 
 *Admin can add Bus by providing neccessary details*
 </br>
-![Screenshot 2023-07-23 230620](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/6443f399-696f-45bc-8be9-877490633c47)
+
 
 ## **Route Module**
 *Admin can add Route by providing neccessary details*
