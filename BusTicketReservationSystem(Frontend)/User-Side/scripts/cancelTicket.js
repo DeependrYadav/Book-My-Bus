@@ -9,7 +9,7 @@ if(currUserId == null){
 function cancelTicket(ticketId){
     const userConfirmed = confirm("Are You Sure You Want To Cancel ?");
     if(userConfirmed){
-        const cancelTicketApi = `http://localhost:8088/reservation/delete/${ticketId}?key=${currUserId}`;
+        const cancelTicketApi = `https://honest-wing-5796-production.up.railway.app/reservation/delete/${ticketId}?key=${currUserId}`;
         fetch(cancelTicketApi, {
             method: 'delete'
         })

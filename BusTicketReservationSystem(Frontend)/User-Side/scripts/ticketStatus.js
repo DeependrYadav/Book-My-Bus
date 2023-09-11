@@ -14,7 +14,7 @@ var fetchedDataId = null;
 
 function fetchAndDisplayTicket(searchId) {
 
-    const apiUrl = `http://localhost:8088/reservation/view/${searchId}?key=${currUserId}`;
+    const apiUrl = `https://honest-wing-5796-production.up.railway.app/reservation/view/${searchId}?key=${currUserId}`;
 
     // Fetch data from the API and populate the table
     fetch(apiUrl)
@@ -54,7 +54,7 @@ search_ticket_button.addEventListener('click', () => {
 function cancelTicket(){
     const userConfirmed = confirm("Are You Sure You Want To Cancel ?");
     if(userConfirmed){
-        const cancelTicketApi = `http://localhost:8088/reservation/delete/${fetchedDataId}?key=${currUserId}`;
+        const cancelTicketApi = `https://honest-wing-5796-production.up.railway.app/reservation/delete/${fetchedDataId}?key=${currUserId}`;
         fetch(cancelTicketApi, {
             method: 'delete'
         })

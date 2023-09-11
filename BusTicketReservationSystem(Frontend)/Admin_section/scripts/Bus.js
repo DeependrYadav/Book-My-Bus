@@ -3,7 +3,7 @@ let Tbody = document.getElementById("Tbody");
 let uuid=JSON.parse(localStorage.getItem("uuid")) || "";
 // let uuid="wt0Ob5";
 console.log(uuid);
-let baseURL = `http://localhost:8088`;
+let baseURL = `https://honest-wing-5796-production.up.railway.app`;
 getProduct()
 function getProduct(){
     fetch(`${baseURL}/Bus/viewAllBus?key=${uuid}`)
@@ -12,7 +12,7 @@ function getProduct(){
     })
     .then((data)=>{
         console.log(data);
-        //console.log(data);
+        // console.log(data);
         showData(data)
     })
 }
@@ -22,7 +22,7 @@ function getProduct(){
 function showData(data){
     Tbody.innerHTML = null;
     
-    let htmlData = data.map((el)=>getCard(el.busId,el.busName,el.driverName,el.busType,el.routeForm,el.routeTo,el.arrivalTime,el.departureTime,el.seats,el.availabeSeats))
+    let htmlData = data.map((el)=>getCard(el.busId,el.busName,el.driverName,el.busType,el.routeFrom,el.routeTo,el.arrivalTime,el.departureTime,el.seats,el.availableSeats))
     Tbody.innerHTML = htmlData.join(" ");
     
     let tr = document.getElementsByClassName("edit");

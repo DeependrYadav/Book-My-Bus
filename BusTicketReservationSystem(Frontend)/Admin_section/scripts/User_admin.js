@@ -1,6 +1,6 @@
 let uuid=JSON.parse(localStorage.getItem("uuid")) || "";
 
-let baseURL = `http://localhost:8088`;
+let baseURL = `https://honest-wing-5796-production.up.railway.app`;
 
 async function getData() {
     let res=await fetch(`${baseURL}/user/viewall?key=${uuid}`);

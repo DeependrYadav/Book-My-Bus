@@ -62,7 +62,7 @@ function add_row() {
 
 
 function addUser(obj) {
-    let url = "http://localhost:8088/user/add";
+    let url = "https://honest-wing-5796-production.up.railway.app/user/add";
 
     fetch(url, {
             method: 'POST',

@@ -61,7 +61,7 @@ function createBusDiv(bus, departureDate){
   const bodyRow2 = document.createElement('tr');
 
   const bodyCell4 = document.createElement('td');
-  bodyCell4.innerText = bus.routeForm;
+  bodyCell4.innerText = bus.routeFrom;
 
   const bodyCell5 = document.createElement('td');
 
@@ -84,7 +84,7 @@ function createBusDiv(bus, departureDate){
   ticketPriceDetails.classList.add('ticket-price-details');
 
   let availableSeatsh2 = document.createElement('h2');
-  availableSeatsh2.innerText = "Available Seats: " + bus.availabeSeats;
+  availableSeatsh2.innerText = "Available Seats: " + bus.availableSeats;
 
   let bookButton = document.createElement('button');
   bookButton.id = "book-ticket";
@@ -92,11 +92,11 @@ function createBusDiv(bus, departureDate){
 
   bookButton.addEventListener('click', () => {
     const currBus = bus.busId;
-    const bookApi = `http://localhost:8088/reservation/add/${currBus}?key=${currUser}`;
+    const bookApi = `https://honest-wing-5796-production.up.railway.app/reservation/add/${currBus}?key=${currUser}`;
 
     let bodyToSend = {
       reservationDate: departureDate,
-      source: bus.routeForm,
+      source: bus.routeFrom,
       destination: bus.routeTo
     };
 
@@ -142,7 +142,7 @@ function createBusDetails(busDetails, departureDate){
 function checkBusDetails(data, fromCity, toCity, departureDate){
   console.log(fromCity, toCity);
   data.forEach(element => {
-    if(element.routeFrom == fromCity || element.routeTo == toCity){
+    if(element.routeFrom == fromCity && element.routeTo == toCity){
       busDetails.push(element);
     }
   });
@@ -158,7 +158,7 @@ function displayBus(fromCity, toCity, departureDate){
     alert("Please Login to Check Available buses...!");
     window.location.href="./login.html";
   }
-  const fetchBusApi = `http://localhost:8088/Bus/viewAllBus?key=${currUser}`;
+  const fetchBusApi = `https://honest-wing-5796-production.up.railway.app/Bus/viewAllBus?key=${currUser}`;
   fetch(fetchBusApi)
   .then(response => response.json())
   .then(data => {

@@ -1,6 +1,6 @@
 let uuid=JSON.parse(localStorage.getItem("uuid")) || "";
 console.log(uuid)
-let baseURL = `http://localhost:8088`;
+let baseURL = `https://honest-wing-5796-production.up.railway.app`;
 document.addEventListener("DOMContentLoaded", function () {
     // Add event listener to the "Logout" link
     var logoutLink = document.getElementById("logout");
@@ -35,13 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 // openCustomAlert("User LogOut SucessFull!!");
                 localStorage.setItem("username", JSON.stringify(""));
                 localStorage.setItem("uuid", JSON.stringify(""));
-              
+                window.location.href = "../index.html"; // Replace "login.html" with the actual logout page URL
                 console.log(data);
               })
               .catch(error => {
                 console.error('Error posting data:', error);
               });
-            window.location.href = "../index.html"; // Replace "login.html" with the actual logout page URL
+            
           });
         }
       });

@@ -3,7 +3,7 @@ let formdata=document.querySelectorAll("#addNewBusForm");
 let i=0;
 
 let uuid=JSON.parse(localStorage.getItem("uuid")) || "";
-let baseURL = `http://localhost:8088`;
+let baseURL = `https://honest-wing-5796-production.up.railway.app`;
 
 // Add an event listener to the form
 document.getElementById("addNewBusForm").addEventListener("submit", function (event) {

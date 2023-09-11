@@ -65,7 +65,7 @@ function sign_in() {
 
 
 function loginUser(obj) {
-    let url = "http://localhost:8088/user/login";
+    let url = "https://honest-wing-5796-production.up.railway.app/user/login";
 
     fetch(url, {
             method: 'POST',
@@ -100,7 +100,7 @@ function loginUser(obj) {
 
 function loginAdmin(obj) {
     console.log("Inside admin");
-    let url = "http://localhost:8088/admin/login";
+    let url = "https://honest-wing-5796-production.up.railway.app/admin/login";
 
     fetch(url, {
             method: 'POST',

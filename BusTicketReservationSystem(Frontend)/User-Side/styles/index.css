@@ -248,7 +248,7 @@ body{
   background: url('/User-Side/images/Bus.png');
   background-repeat: no-repeat;
   right: 0;
-  bottom: 85px;
+  bottom: 0px;
   width: 200px;
   height: 75px;
   position: absolute; 

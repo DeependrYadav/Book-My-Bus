@@ -126,7 +126,7 @@ function logoutUser() {
   if(uuid==""){
     openCustomAlert("Please Login First");
   }else{
-    let url = `http://localhost:8088/user/logout?key=${uuid}`;
+    let url = `https://honest-wing-5796-production.up.railway.app/user/logout?key=${uuid}`;
     console.log(uuid);
     fetch(url, {
         method: 'POST'
@@ -136,7 +136,7 @@ function logoutUser() {
         openCustomAlert("User LogOut SucessFull!!");
         localStorage.setItem("username", JSON.stringify(""));
         localStorage.setItem("uuid", JSON.stringify(""));
-      
+        window.location.reload();
         console.log(data);
       })
       .catch(error => {

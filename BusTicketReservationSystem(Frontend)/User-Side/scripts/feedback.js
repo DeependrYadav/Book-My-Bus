@@ -11,7 +11,7 @@ function addFeedback() {
     if (uuid == "") {
         openCustomAlert("Please Login First");
     } else {
-        let url = `http://localhost:8088/feedback/add?key=${uuid}`;
+        let url = `https://honest-wing-5796-production.up.railway.app/feedback/add?key=${uuid}`;
         let driver=document.getElementById("driver").value;
         let service=document.getElementById("service").value;
         let overall=document.getElementById("overall").value;
@@ -61,7 +61,7 @@ function openCustomAlert(message) {
     setTimeout(() => {
         closeCustomAlert();
         if(message=="Feedback Added Sucesssfully"||message=="Please Book Some Ticket First!!"){
-            window.location.href="../User-Side/index.html";
+            window.location.href="../index.html";
         }else if(message=="Please Login First"){
             window.location.href="./login.html";
         }
