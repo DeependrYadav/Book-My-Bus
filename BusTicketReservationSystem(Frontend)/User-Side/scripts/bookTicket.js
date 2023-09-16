@@ -162,7 +162,7 @@ function displayBus(fromCity, toCity, departureDate){
   }
   const fetchBusApi = `${baseURL}/Bus/viewAllBus?key=${currUser}`;
   fetch(fetchBusApi)
-  .then(response => response.json())
+  .then(response =>response.json())
   .then(data => {
     console.log(data);
     bookHeading.style.display = "none";

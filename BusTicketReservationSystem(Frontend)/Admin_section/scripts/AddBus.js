@@ -8,42 +8,42 @@ let baseURL = `https://honest-wing-5796-production.up.railway.app`;
 // Add an event listener to the form
 document.getElementById("addNewBusForm").addEventListener("submit", function (event) {
 
-     event.preventDefault();
-
-     const formInputs = document.querySelectorAll("#addNewBusForm input, #addNewBusForm select");
+  event.preventDefault();
+  const formInputs = document.querySelectorAll("#addNewBusForm input, #addNewBusForm select");
    
-     // Create an empty object to store the form data
-     const formData = {};
+  // Create an empty object to store the form data
+  const formData = {};
    
-     // Iterate through the input elements and collect the data
-     formInputs.forEach(input => {
-       formData[input.name] = input.value;
-     })
-     console.log(formData);
-     fetch(`${baseURL}/Bus/add?key=${uuid}`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json", // Set the Content-Type header for JSON data
-          },
-          body: JSON.stringify(formData),
-          })
-          .then( function(response) {
-            if (response.status === 400){
-              response.json().then(data => {
-                alert(data.message); // Display JSON content in an alert
-              });
-            }else{
-              return response.json(); // Parse and return JSON response
-            }
-          })
-          .then((data) => {
-            // Handle the response data if required
-            if(data)alert("Succefully Added");
-          })
-          .catch((error) => {
-            // Handle any errors that occurred during the fetch request
-            console.error("Fetch error:", error);
-          });
+  // Iterate through the input elements and collect the data
+  formInputs.forEach(input => {
+    formData[input.name] = input.value;
+  })
+  console.log(formData);
+  fetch(`${baseURL}/Bus/add?key=${uuid}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json", // Set the Content-Type header for JSON data
+    },
+    body: JSON.stringify(formData),
+    })
+    .then( function(response) {
+      if (response.status === 400){
+        response.json().then(data => {
+          alert(data.message); // Display JSON content in an alert
+        });
+      }else{
+        return response.json(); // Parse and return JSON response
+      }
+      })
+    .then((data) => {
+      // Handle the response data if required
+      if(data)alert("Succefully Added");
+    })
+    .catch((error) => {
+      // Handle any errors that occurred during the fetch request
+      console.error("Fetch error:", error);
+    });
+    document.getElementById("addNewBusForm").reset();
 })
 document.addEventListener("DOMContentLoaded", function () {
   // Add event listener to the "Logout" link
