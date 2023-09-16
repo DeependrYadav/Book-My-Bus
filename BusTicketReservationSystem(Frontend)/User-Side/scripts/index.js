@@ -1,5 +1,5 @@
 const moving_bus = document.querySelector('#moving-bus');
-
+let baseURL = `https://honest-wing-5796-production.up.railway.app`;
 ////////////////////
 //custome alert
 function openCustomAlert(message) {
@@ -126,7 +126,7 @@ function logoutUser() {
   if(uuid==""){
     openCustomAlert("Please Login First");
   }else{
-    let url = `https://honest-wing-5796-production.up.railway.app/user/logout?key=${uuid}`;
+    let url = `${baseURL}/user/logout?key=${uuid}`;
     console.log(uuid);
     fetch(url, {
         method: 'POST'

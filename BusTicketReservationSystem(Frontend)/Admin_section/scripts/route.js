@@ -16,12 +16,22 @@ let baseURL = `https://honest-wing-5796-production.up.railway.app`;
           "Content-Type": "application/json",
         },
         body : JSON.stringify(obj)
-      }).then(response => response.json()
-      ).then((data) => {
+      })
+      .then( function(response) {
+        if (response.status === 400){
+          response.json().then(data => {
+            alert(data.message); // Display JSON content in an alert
+          });
+        }else{
+          return response.json(); // Parse and return JSON response
+        }
+      })
+      .then((data) => {
         // Handle the response data if required
-        console.log(data);
-        alert("Succefully Added");
-      }).catch((error) => {
+        if(data)alert("Succefully Added");
+      })
+      .catch((error) => {
+        // Handle any errors that occurred during the fetch request
         console.error("Fetch error:", error);
       });
       

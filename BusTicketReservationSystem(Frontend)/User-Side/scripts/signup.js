@@ -1,4 +1,4 @@
-
+let baseURL = `https://honest-wing-5796-production.up.railway.app`;
 //custome alert
 function openCustomAlert(message) {
     const customAlert = document.getElementById('customAlert');
@@ -62,9 +62,8 @@ function add_row() {
 
 
 function addUser(obj) {
-    let url = "https://honest-wing-5796-production.up.railway.app/user/add";
 
-    fetch(url, {
+    fetch(`${baseURL}/user/add`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json', // Specify that we're sending JSON data

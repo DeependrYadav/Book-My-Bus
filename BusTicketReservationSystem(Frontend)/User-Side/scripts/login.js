@@ -1,5 +1,5 @@
 let currUserID = JSON.parse(localStorage.getItem('uuid'));
-
+let baseURL = `https://honest-wing-5796-production.up.railway.app`;
 if(currUserID == undefined){
     currUserID = null;
 }
@@ -65,9 +65,8 @@ function sign_in() {
 
 
 function loginUser(obj) {
-    let url = "https://honest-wing-5796-production.up.railway.app/user/login";
 
-    fetch(url, {
+    fetch(`${baseURL}/user/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json', // Specify that we're sending JSON data
@@ -100,9 +99,8 @@ function loginUser(obj) {
 
 function loginAdmin(obj) {
     console.log("Inside admin");
-    let url = "https://honest-wing-5796-production.up.railway.app/admin/login";
 
-    fetch(url, {
+    fetch(`${baseURL}/admin/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json', // Specify that we're sending JSON data

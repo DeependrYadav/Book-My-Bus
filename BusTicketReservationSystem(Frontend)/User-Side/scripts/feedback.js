@@ -1,4 +1,5 @@
 let userName = JSON.parse(localStorage.getItem("username")) || "";
+let baseURL = `https://honest-wing-5796-production.up.railway.app`;
 if(userName==""){
     openCustomAlert("Please Login First");
 }else{
@@ -11,7 +12,7 @@ function addFeedback() {
     if (uuid == "") {
         openCustomAlert("Please Login First");
     } else {
-        let url = `https://honest-wing-5796-production.up.railway.app/feedback/add?key=${uuid}`;
+        let url = `${baseURL}/feedback/add?key=${uuid}`;
         let driver=document.getElementById("driver").value;
         let service=document.getElementById("service").value;
         let overall=document.getElementById("overall").value;

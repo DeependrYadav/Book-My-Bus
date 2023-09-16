@@ -26,12 +26,19 @@ document.getElementById("addNewBusForm").addEventListener("submit", function (ev
             "Content-Type": "application/json", // Set the Content-Type header for JSON data
           },
           body: JSON.stringify(formData),
-        })
-          .then(response =>response.json())
+          })
+          .then( function(response) {
+            if (response.status === 400){
+              response.json().then(data => {
+                alert(data.message); // Display JSON content in an alert
+              });
+            }else{
+              return response.json(); // Parse and return JSON response
+            }
+          })
           .then((data) => {
             // Handle the response data if required
-            console.log(data);
-            alert("Succefully Added");
+            if(data)alert("Succefully Added");
           })
           .catch((error) => {
             // Handle any errors that occurred during the fetch request
