@@ -6,7 +6,7 @@
 
 > It has 6 modules Admin, User, Reservation, Bus, Route and Feedback.
 
-> Book my bus (Bus ticket reservation system) application during the construct week at [Masai School](https://masaischool.com/). Completed the project in five days with a team of five aspiring developers.
+
 
 # Features
 
@@ -64,13 +64,14 @@
 ## **All Modules** 
 *All modules of our project*
 </br>
-![All Modules](./images/all_controller.png)
+![all_controller](https://github.com/DeependrYadav/Book-My-Bus/assets/39863817/86db4983-c26a-4d28-859a-6624cb92f892)
 
 
 ## **Admin Home page and Module** 
 *Admin can login by using username (admin) and password (admin1234)*
 ### Admin Home page
 ![Admin Panel](./images/admin_panel.png)
+
 </br>
 ### Admin Module
 ![Admin Module](./images/admin_login.png)
