@@ -5,6 +5,7 @@ let buses = 0;
 let users = 0;
 let routes =0;
 let resid=document.getElementById("res-id");
+//Calling fetch method with Urls
 fetchData("Bus/viewAllBus")
 fetchData("user/viewall")
 fetchData("route/viewall")
@@ -12,7 +13,7 @@ setTimeout(() => {
     // console.log(buses)
     showGraph()
 }, 2000)
-
+//fetching data  this method
 function fetchData(Query) {
    
     fetch(`${baseURL}/${Query}?key=${uuid}`)
@@ -26,7 +27,7 @@ function fetchData(Query) {
         })
 
 }
-
+//This function show  data on graph 
 function showGraph() {
     google.charts.load('current', { 'packages': ['corechart'] });
     google.charts.setOnLoadCallback(drawChart);
@@ -57,6 +58,8 @@ function showGraph() {
 //         window.open("./index.html")
 //     }, 2000)
 // })
+
+//logout function
 document.addEventListener("DOMContentLoaded", function () {
     // Add event listener to the "Logout" link
     var logoutLink = document.getElementById("logout");
@@ -104,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  
+  // Showing Reservation data on page cards
 function showResvereation(){
    fetch(`${baseURL}/reservation/viewall?key=${uuid}`)
    .then((Response) => {
