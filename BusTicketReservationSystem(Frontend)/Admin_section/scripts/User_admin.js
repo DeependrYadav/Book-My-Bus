@@ -1,7 +1,7 @@
 let uuid=JSON.parse(localStorage.getItem("uuid")) || "";
 
 let baseURL = `https://honest-wing-5796-production.up.railway.app`;
-
+//getting data
 async function getData() {
     let res=await fetch(`${baseURL}/user/viewall?key=${uuid}`);
     console.log(res.status);
@@ -86,7 +86,7 @@ function   display(data){
       });
   })
 }
-
+//delete function for user
 async function  deleteData(id){
     let res=await fetch(`${baseURL}/user/delete/${id}?key=${uuid}`,{
       method: 'DELETE',
@@ -98,7 +98,7 @@ async function  deleteData(id){
     console.log(data);
 
 }
-
+//logout function
 document.addEventListener("DOMContentLoaded", function () {
   // Add event listener to the "Logout" link
   var logoutLink = document.getElementById("logout");
