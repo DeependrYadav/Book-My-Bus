@@ -18,7 +18,7 @@ function getProduct(){
 }
 
 
-
+//showing data  
 function showData(data){
     Tbody.innerHTML = null;
     
@@ -35,7 +35,7 @@ function showData(data){
             toggleBilling(rowId,e.target)
         })
     }
-
+// action on deleteButton
     for(let btn of deletebtn){
         btn.addEventListener("click",(e)=>{
             let id = e.target.dataset.id;
@@ -45,6 +45,7 @@ function showData(data){
     }
 
 }
+//added toggle 
 function toggleBilling(rowId,element) {
     // Select the billing text fields
     const billingItems = document.querySelectorAll(`#ID${rowId} input[type="text"]`);
@@ -75,7 +76,7 @@ function toggleBilling(rowId,element) {
         updateData(obj,rowId)
     }
   }
-
+//Updating Action on table
  function updateData(obj,id){
       let busId="busId";
     if(obj[busId] == undefined)obj[busId] = id;
@@ -91,7 +92,7 @@ function toggleBilling(rowId,element) {
         getProduct()
     },1200)
   }
-
+//Deleting functionality on table
   function deleteProduct(id){
     fetch(`${baseURL}/Bus/delete/${id}?key=${uuid}`,{
         method : "DELETE"
@@ -100,7 +101,7 @@ function toggleBilling(rowId,element) {
         getProduct()
     },1200)
   }
-
+//getting card and insering into tables
 function getCard(id,BusName,DriverName,BusType,RouteFrom,RouteTo,ArrivalTime,DepartureTime,Seats,AvailableSeats){
     let imgURL="https://assets.volvo.com/is/image/VolvoInformationTechnologyAB/1860x1050-volvo-9700-CGI1?qlt=82&wid=1024&ts=1656931444230&dpr=off&fit=constrain";
     if(id%2==0){
@@ -137,6 +138,7 @@ log.addEventListener("click",()=>{
         window.open("./index.html")
     }, 2000)
 })
+//logout function
 document.addEventListener("DOMContentLoaded", function () {
     // Add event listener to the "Logout" link
     var logoutLink = document.getElementById("logout");
