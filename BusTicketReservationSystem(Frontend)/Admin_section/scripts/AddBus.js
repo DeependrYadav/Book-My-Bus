@@ -5,7 +5,7 @@ let i=0;
 let uuid=JSON.parse(localStorage.getItem("uuid")) || "";
 let baseURL = `https://honest-wing-5796-production.up.railway.app`;
 
-// Add an event listener to the form
+// AddBus Function to add a Bus in database
 document.getElementById("addNewBusForm").addEventListener("submit", function (event) {
 
   event.preventDefault();
@@ -45,6 +45,7 @@ document.getElementById("addNewBusForm").addEventListener("submit", function (ev
     });
     document.getElementById("addNewBusForm").reset();
 })
+//Logout function
 document.addEventListener("DOMContentLoaded", function () {
   // Add event listener to the "Logout" link
   var logoutLink = document.getElementById("logout");
