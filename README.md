@@ -59,7 +59,8 @@
 ## **Er Diagram** 
 *Er diagram of our project*
 </br>
-![39a568c0-b77f-4ca1-b87a-72ce3eeaa7e6](https://github.com/DeependrYadav/honest-wing-5796/assets/121309012/9c8bb70a-5f68-4210-8a88-d8796f8e165c)
+![ERDigramBus](https://github.com/DeependrYadav/Book-My-Bus/assets/39863817/d679c785-e377-4888-98c3-170552a103a4)
+
 
 ## **All Modules** 
 *All modules of our project*
@@ -74,13 +75,17 @@
 
 
 </br>
-### Admin Module
-[admin_login](https://github.com/DeependrYadav/Book-My-Bus/assets/39863817/67f1598b-5616-43c7-aba5-61ddaddd1b57)
+## **Admin Module **
+
+![admin_login](https://github.com/DeependrYadav/Book-My-Bus/assets/39863817/1e01542e-f52c-4d97-abfc-5076327b0012)
+
+
 
 </br>
 
 ## **User landing page**
-![User landing page](./images/landing_page.png)
+![User landing page](https://github.com/DeependrYadav/Book-My-Bus/assets/39863817/fcc4cfd3-6636-4b64-aa2b-a9f645b16783)
+
 
 ## **User Module**
 *Customer can signup first if not registered earlier*
